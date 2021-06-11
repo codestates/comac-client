@@ -4,6 +4,7 @@ import Login from './pages/login'
 import Signup from './pages/Signup'
 import Mypage from './pages/Mypage'
 import Home from './pages/Home'
+import './pages/Home.css'
 // react-router-dom 구현
 
 function App() {

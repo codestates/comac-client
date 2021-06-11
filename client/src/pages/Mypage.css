@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+}
+
+.mypage__body{
+    border: solid rgb(2, 2, 255);
+    height: 54rem;
+    
+}
+
+.user-info{
+    height: 44rem;
+    margin: 40px 700px;
+}
+
+.user-info__profile{
+    border: solid rgb(255, 98, 0);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info__profile img{
+    border: solid rgb(21, 255, 0);
+    width: 80px;
+    height: 80px;
+}
+
+.user-info__links{
+    border: solid rgb(255, 98, 0);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.user-info__links div{
+    border: solid black;
+    border-radius: 50%;
+    padding: 20px;
+    margin: 0px 12px;
+}
+
+.user-info__info{
+    border: solid rgb(255, 98, 0);
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info__info div{
+    padding: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info__info form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.user-info__info > form > button {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+}
