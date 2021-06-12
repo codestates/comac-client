@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 
-const login = () => {
-    
+const Login = () => {
+  const [ idLen, setIdLen ] = useState("")
+  
+  const warningAlert = () => {
+    console.log(idLen);
+  }
+
   return (
     <div className="login__body">
       <div className="login__body-child">
@@ -11,18 +17,22 @@ const login = () => {
         </div>
         <div className="login__box">
           <span>LOG IN</span>
-          <div>
-            <input type="text" placeholder="아이디 입력"/>  
+          <div className="login__id-pw">
+            <input id="id" name="id" type="text" autocomplete="off" required />
+            <label for="id">ID</label>  
           </div>
-          <div>
-            <input type="password" placeholder="●●●●●●●●"/>
+          <div className="login__id-pw">
+            <input id="pw" name="pw" type="password" autocomplete="off" required />
+            <label for="pw">Password</label>
           </div>
           <div className="login__basic-login-button">
-            <button>로그인</button>
-            <button>회원가입</button>
+            <button id="login-btn" type="submit" onClick={warningAlert}>LOGIN</button>
+          </div>
+          <div className="login__signup-link">
+            <Link id="signup-link" to='/signup'>SIGN UP</Link>
           </div>
           <div className="login__social-login-button">
-            <button class="fab fa-google"></button>
+            <button className="fab fa-google"></button>
           </div>
           <div className="login__error-message">
             error message
@@ -33,4 +43,6 @@ const login = () => {
     );
 };
 // 이미지는 백그라운드 이미지 사용
-export default login;
+
+// ref 사용 (DOM)
+export default Login;
