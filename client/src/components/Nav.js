@@ -1,5 +1,6 @@
 import React from 'react'
 import './Nav.css'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
     return (
@@ -8,12 +9,12 @@ const Nav = () => {
             <i class="fas fa-bars"></i>
           </a>
           <div className="nav-bar__links">
-            <div>홈</div>
-            <div>마이페이지</div>
+            <div><Link id="home-link" to="/home">HOME</Link></div>
+            <div>MY PAGE</div>
           </div>
 
-          <div className="nav-bar__page-name">현재 페이지</div>
-          <div className="nav-bar__post-btn">글쓰기</div>
+          <div className="nav-bar__page-name">MY PAGE</div>
+          <div className="nav-bar__post-btn">WRITE</div>
 
         </nav>
     )
