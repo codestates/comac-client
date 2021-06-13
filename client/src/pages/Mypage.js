@@ -1,6 +1,7 @@
-import React from 'react';
+import React from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
+import { Link } from 'react-router-dom'
 
 const Mypage = () => {
     return (
@@ -13,14 +14,14 @@ const Mypage = () => {
             </div>
 
             <div className="user-info__links">
-              <div>링크</div>
-              <div>링크</div>
-              <div>링크</div>
+              <div><a href="#" title="codestates">링크</a></div>
+              <div><a href="#" title="github">링크</a></div>
+              <div><a href="#" title="coplit">링크</a></div>
             </div>
 
             <div className="user-info__info-box">
-              <div>닉네임</div>
               <div>이름</div>
+              <div>닉네임</div>
               <div>기수정보</div>
             </div>
 
