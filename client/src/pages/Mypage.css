@@ -47,6 +47,7 @@ a {
     padding: 5%;
 }
 
+
 .user-info__links{
     border-top: 1px solid var(--line-color);
     border-bottom: 1px solid var(--line-color);
@@ -55,13 +56,13 @@ a {
     width: 100%;
 }
 
+
 .user-info__links > div{
     border: 1px solid var(--line-color);
     border-radius: 50%;
     padding: 4% 4%;
     margin: 5px 20px;
     color: var(--line-color);
-    
     /* 링크 이미지 */
 }
 
@@ -75,6 +76,7 @@ a {
 }
 
 .user-info__info-box > div{
+    /*유저정보*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +84,6 @@ a {
     width: 70%;
     height: 14%;
     border-radius: 10px;
-    /*유저정보*/
 }
 
 .user-info__button{
@@ -95,6 +96,7 @@ a {
 }
 
 .user-info__button > div{ 
+    /*버튼*/
     border: 1px solid black;
     border-radius: 5px;
     padding: 5% 10%;
