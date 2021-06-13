@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom' 
 
 const Signup = () => {
   return (
@@ -21,6 +22,7 @@ const Signup = () => {
               <input type="text" placeholder="기수(ex: IM28)"/> 
             </div>
             <button className="signup__button">회원가입</button>
+            <Link to='/'>이미 아이디가 있으신가요?</Link>
             <div className="signup__error-message">
             에러메세지
             </div>

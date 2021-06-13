@@ -12,6 +12,12 @@
 
 .nav-bar__links{
     display: flex;
+    padding-left: 12px;
+}
+
+.nav-bar__links div:hover{
+    background: linear-gradient(145deg, #ebeaea, #f0f0f0);
+    cursor: pointer;
 }
 
 .nav-bar__page-name{
@@ -24,33 +30,47 @@
 }
 
 .nav-bar__post-btn{
-    border: 1px solid black;
     display: flex;
     justify-content: center;
-    align-content: center;
-    padding: 10px;
+    align-items: center;
     outline: none;
     margin-right: 12px;
-    width: 100px;
-    height: 50px;
-    border-radius: 10px;
+    padding: 12px;
 }
 
 .nav-bar__post-btn:hover {
-    background-color: whitesmoke;
+    background: linear-gradient(145deg, #ebeaea, #f0f0f0);
     cursor: pointer;
 }
+
+.nav-bar__toggle{
+    
+    position: absolute;
+    display: none;
+    color: black;
+}
+
+.nav-bar__toggle a{
+    text-decoration: none;
+}
+
+
 @media screen and (max-width: 768px) {
     
     .nav-bar{
         border: solid saddlebrown;
         flex-direction: column;
         align-items: flex-start;
+        padding:10px 15px;
     }
 
     .nav-bar__links{
         flex-direction: column;
         align-items: center;
+        width: 100%;
+    }
+    .nav-bar__links > div {
+        text-align: center;
         width: 100%;
     }
 
@@ -62,6 +82,11 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        margin: 0px 
     }
+
+
 }
+
+/* .nav-bar__toggle{
+    display: block;
+} */
