@@ -6,13 +6,12 @@ import './Home.css'
 const Home = () => {
     return (
         <div className="home__body">
-
            <Nav/>
-           <ul className="post-list">
-            <li>컴포넌트</li>
-            <li>컴포넌트</li>
-            <li>컴포넌트</li>
-           </ul>
+           <div className="post-list">
+            <div>컴포넌트</div>
+            <div>컴포넌트</div>
+            <div>컴포넌트</div>
+           </div>
 
         </div>
     );
