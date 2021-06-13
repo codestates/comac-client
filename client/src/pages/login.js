@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom'
 
 
 const Login = () => {
-  const [ idLen, setIdLen ] = useState("")
+ 
+  // const [ idLen, setIdLen ] = useState("")
   
-  const warningAlert = () => {
-    console.log(idLen);
-  }
-
+ 
   return (
     <div className="login__body">
       <div className="login__body-child">
+        <div className="login__header">
+          COMAC
+        </div>
         <div className="login__banner">
-          이곳은 문구!
+          TEAM{'\n'}  BUILDING{'\n'}     FLATFORM
         </div>
         <div className="login__box">
           <span>LOG IN</span>
@@ -26,13 +27,13 @@ const Login = () => {
             <label for="pw">Password</label>
           </div>
           <div className="login__basic-login-button">
-            <button id="login-btn" type="submit" onClick={warningAlert}>LOGIN</button>
+            <button id="login-btn" type="submit" >LOGIN</button>
           </div>
           <div className="login__signup-link">
             <Link id="signup-link" to='/signup'>SIGN UP</Link>
           </div>
           <div className="login__social-login-button">
-            <button className="fab fa-google"></button>
+            <i className="fab fa-google"></i>
           </div>
           <div className="login__error-message">
             error message
