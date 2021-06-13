@@ -2,7 +2,7 @@
 /* 구글 폰트 noto sans kr / 사용 : font-family: 'Noto Sans KR', sans-serif; */
 
 :root {
-  --text-color: #f0f4f5;
+  --text-color: #FCEDDA;
   --background-color: #263343;
   --accent-color: #d49466;
 }
@@ -29,52 +29,63 @@
 }
 
 .login__body-child {
-  margin-left: 18rem;
+  /* margin-left: 18rem; */
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   text-align: center;
-  
+}
+
+.login__header {
+  color: #FCEDDA;
+  z-index: 1;
+  position: fixed;
+  align-self: flex-start;
+  font-size: 2.5rem;
+  font-style: italic;
 }
 
 .login__banner {
-  height: 60%;
+  height: 65%;
   width: 30%;
-  border: 1px dotted black;
-  text-align: center;
+  text-align: left;
+  color: var(--text-color);
+  padding: 12px 12px;
+  align-self:center;
+  z-index: 1;
+  font-size: 1.5rem;
+  white-space: pre-wrap;
 }
 
 .login__box {
   height: 60%;
   width: 25%;
-  /* border: 1px solid black;
-  border-radius: 15px; */
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 2;
-  
-  /* background-color: white; */
+  margin-left: 180px;
 }
 
-.login__box div {
+.login__box > div {
   padding: 12px 8px
 }
 
-.login__box span {
+.login__box > span {
   width: 100%;
   padding-left: 30px;
-  font-size: 40px;
+  font-size: 2.1rem;
   text-align: left;
-  color: #fff;
+  color: var(--text-color);
   margin-bottom: 10px;
 }
 
 .login__id-pw {
+  width: 75%;
   position: relative;
   margin-top: 15px;
 }
@@ -89,7 +100,7 @@
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #999;
-  font-size: 14px; color: #fff;
+  font-size: 14px; color: var(--text-color);
   outline: none;
 }
 
@@ -117,7 +128,7 @@
   width: 80%;
   height: 30px;
   background-color: #166cea;
-  color: #fff;
+  color: var(--text-color);;
   font-size:14px;
   border: none;
   border-radius: 25px;
@@ -125,16 +136,16 @@
 }
 
 #signup-link {
-  color: #fff;
+  color: var(--text-color);
   cursor: pointer;
   text-decoration: none;
 }
   
-.login__social-login-button button {
-  font-size: 16px;
-  border-radius: 50px;
+.login__social-login-button > i {
+  font-size: 1.3rem;
   outline: none;
   cursor: pointer;
+  color: var(--accent-color)
 }
 
 .login__social-login-button button:hover {
@@ -142,12 +153,12 @@
 }
 
 .login__error-message {
-  color: #fff;
+  color: var(--text-color);;
 }
 
 /*========= signup  =========*/
 .signup__body {
-  background: url(./images/image2.jpeg) no-repeat center;
+  background: url(./images/image1.jpeg) no-repeat center;
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -157,15 +168,24 @@
 }
 
 .signup__body-child {
-  height: 70%;
+  height: 80%;
   width: 40%;
-  border: 1px solid black;
-  border-radius: 50px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 65px;
+  background: #e0e0e0;
+  box-shadow:  10px 10px 30px #5a5a5a, -10px -10px 30px #ffffff;
+}
+.signup__sign-text {
+  color: #7b9acc;
+  font-weight: bold;
+}
+
+.signup__user-info {
+  width: 55%;
 }
 
 .signup__body-child input {
@@ -175,6 +195,33 @@
   border-radius: 30px;
 }
 
+.signup__button {
+  cursor: pointer;
+}
+
+#login-link {
+  text-decoration: none;  
+}
+
 .signup__button, .signup__error-message {
-  margin-top: 10px;
+  margin-top: 14px;
+  margin-bottom: 12px;
+  
+}
+
+@media screen and (max-width: 600px) {
+  .login__banner {
+    display: none;
+  }
+
+  .login__box {
+    width: 80%;
+    margin-left: 0px;
+  }
+
+}
+@media screen and (max-width: 700px) {
+  .signup__body-child {
+    width: 70%;
+  }
 }
