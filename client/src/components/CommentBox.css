@@ -1,49 +1,75 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 
 .commentBox__body{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     border: 1px solid black;
     padding: 2%;
 
 }
 
 
-.comment-user-profile{
+.commentBox__profile{
     display: flex;
     align-items: center;
-    border: 1px solid green;
+    justify-content: center;
     height: 15vh;
+    width: 8vw;
+}
+
+.commentBox__contents__user-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 15vh;
+    width: 80vw;
+}
+
+.commentBox__contents__user-info > div:nth-child(1),
+.commentBox__contents__user-info > div:nth-child(2){
+    text-align: start; 
+    font-size: large;
+    font-weight: bold;
+}
+
+.commentBox__contents__user-info > div:nth-child(3){
+    text-align: center;
+}
+
+.commentBox__contents__comment{
+    grid-column: 1/4;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+
+@media screen and (max-width: 768px){
+
+    .commentBox__body{
+        display: block;
+        padding: 0;
+    }
     
-}
+    .commentBox__contents__user-info{
+        display: flex
+    }
 
-.comment-user-info{
-    display: flex;
-    border: 1px solid rgb(250, 139, 4);
-    flex-direction: column;
-    width: 80%; 
-    height: 15vh;
-}
+    .commentBox__profile{
+        display: none;
+    }
+    
+    .commentBox__contents__user-info > div:nth-child(2),
+    .commentBox__contents__user-info > div:nth-child(3){
+        display: none;
+    }
 
-.comment-user-info__1{
-    display: flex;
-    justify-content: space-between;
-    /* padding: 5%; */
-    border: 5px solid rgb(37, 5, 245);
-}
+    .commentBox__contents__user-info > div:nth-child(1){
+        width: 5em;
+    }
 
-.comment-user-info__1 div{
-    border: 1px solid black;
-    width: 80px;
-    height: 50px;
-}
-
-.comment-user-info__2{
-    display: flex;
-    justify-content: flex-start;
-    border: 5px solid rgb(244, 9, 9);
 }

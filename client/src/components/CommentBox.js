@@ -5,16 +5,20 @@ const CommentBox = () =>{
     return (
         <div className="commentBox__body">
 
-          <div className="comment-user-profile">프로필 사진</div>
-          <div className="comment-user-info">
-
-            <div className="comment-user-info__1">
-              <div>이름</div>
-              <div>기수정보</div>
-              <div>게시날짜</div>
-              <div className="comment-user-info__2">댓글내용</div>
-            </div>
+          <div className="commentBox__profile">
+            <i class="fas fa-user"></i>
+          </div>
+          <div className="commentBox__contents">
             
+            <div className="commentBox__contents__user-info">
+              <div>박지훈</div>
+              <div>IM28</div>
+              <div>2021-06-13</div>
+
+              <div className="commentBox__contents__comment">
+                댓글내용
+              </div>
+            </div>
           </div>   
 
         </div>
