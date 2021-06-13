@@ -9,7 +9,7 @@ const Mypage = () => {
           <div className="user-info">
 
             <div className="user-info__profile">
-              <img src="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"/>
+              <i class="fas fa-user"></i>
             </div>
 
             <div className="user-info__links">
@@ -18,14 +18,15 @@ const Mypage = () => {
               <div>링크</div>
             </div>
 
-            <div className="user-info__info">
-              <div>
-                정보
-              </div>
-              <form>
-                <button>확인</button>
-                <button>수정</button>
-              </form>
+            <div className="user-info__info-box">
+              <div>닉네임</div>
+              <div>이름</div>
+              <div>기수정보</div>
+            </div>
+
+            <div className="user-info__button">
+              <div>확인</div>
+              <div>수정</div>
             </div>
 
           </div>

@@ -1,69 +1,161 @@
 *{
     box-sizing: border-box;
+    font-size: 100%;
 }
 
 .mypage__body{
-    border: solid rgb(2, 2, 255);
-    height: 54rem;
-    
-}
-
-.user-info{
-    height: 44rem;
-    margin: 40px 700px;
-}
-
-.user-info__profile{
-    border: solid rgb(255, 98, 0);
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.user-info__profile img{
-    border: solid rgb(21, 255, 0);
-    width: 80px;
-    height: 80px;
-}
-
-.user-info__links{
-    border: solid rgb(255, 98, 0);
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-}
-
-.user-info__links div{
-    border: solid black;
-    border-radius: 50%;
-    padding: 20px;
-    margin: 0px 12px;
-}
-
-.user-info__info{
-    border: solid rgb(255, 98, 0);
     display: flex;
     flex-direction: column;
 }
 
-.user-info__info div{
-    padding: 175px;
+.user-info{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 80vh;
+    width: 30vw;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    margin-top: 5%;
+}
+
+
+.fa-user{
+    font-size: 6em;
+}
+
+.user-info__profile{
+    padding: 5%;
+}
+
+ 
+
+.user-info__links{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 2%;
+}
+
+.user-info__links div{
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 4% 4%;
+    margin: 5px 20px;
+    /* 링크 이미지 */
+}
+
+.user-info__info-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 80%;
+}
+
+.user-info__info-box > div{
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid black;
+    width: 70%;
+    height: 20%;
+    border-radius: 10px;
+    /*유저정보*/
 }
 
-.user-info__info form {
+.user-info__button{
     display: flex;
+    width: 100%;
+    height: 5em;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    padding: 2% 24%;
 }
 
-.user-info__info > form > button {
-    background-color: rgb(255, 255, 255);
+.user-info__button > div{ 
+    border: 1px solid black;
     border-radius: 5px;
-    width: 100px;
-    height: 50px;
+    padding: 5% 15%;
+    /*버튼*/
+}
+
+.user-info__button > div:hover{
+    background: linear-gradient(145deg, #ebeaea, #f0f0f0);
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px){
+
+    .user-info{
+        display: flex;
+        border: 1px solid black;
+        border-radius: 10px;
+        height: 60vh;
+        width: 40vw;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        margin-top: 2%;
+    }
+
+    .fa-user{
+        font-size: 3em;
+    }
+
+    .user-info__links{
+        display: none; /* 아예 없는게 나을지? */
+        justify-content: center;
+    }
+
+    /* .user-info__links div{
+        display: none;
+        border: 1px solid black;
+        border-radius: 50%;
+        padding: 2% 2%;
+        margin: 5px 20px;
+    } */
+
+    /* .user-info__links div:first-child{
+        display: block;
+    } */
+
+
+    .user-info__info-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 10%;
+        width: 100%;
+        height: 60%;
+    }
+    
+    .user-info__info-box > div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        width: 80%;
+        height: 10%;
+        border-radius: 10px;
+        /*유저정보*/
+    }
+
+    .user-info__button{
+        padding: 2% 14%
+    }
+
+    .user-info__button > div{ 
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 2% 12%;
+        margin: 5%;
+        /*버튼*/
+    }
 }
