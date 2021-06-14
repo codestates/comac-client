@@ -6,10 +6,15 @@
 
 
 .post__body{
+    border: 1px solid black;
+    border-radius: 10px;
     display: flex;
+    padding: 0.5% 3%;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    width: 60vw;
+    height: 40vh;
+    margin: 0.5%;
 }
 
 .post__user-info{
@@ -38,8 +43,7 @@
     padding: 2%;
     height: 70%;
     overflow: scroll;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+
 }
 
 .post__btn-icon{ 
@@ -76,7 +80,8 @@
 
     .post__user-info{
         flex-direction: column;
-        margin-right: auto;
+        align-items: flex-start;
+        /* margin-right: auto; */
     }
     .post__user-info div:nth-child(2){
         padding: 10px; 

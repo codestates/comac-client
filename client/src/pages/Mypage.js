@@ -10,7 +10,7 @@ const Mypage = () => {
           <div className="user-info">
 
             <div className="user-info__profile">
-              <i class="fas fa-user"></i>
+              <i className="fas fa-user"></i>
             </div>
 
             <div className="user-info__links">

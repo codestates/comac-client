@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from '../components/Nav'
+import Post from '../components/Post'
 import './Home.css'
 
 
@@ -8,9 +9,9 @@ const Home = () => {
         <div className="home__body">
            <Nav/>
            <div className="post-list">
-            <div>컴포넌트</div>
-            <div>컴포넌트</div>
-            <div>컴포넌트</div>
+            <Post/>
+            <Post/>
+            <Post/>
            </div>
 
         </div>
