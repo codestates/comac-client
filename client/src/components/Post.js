@@ -4,12 +4,11 @@ import './Post.css'
 const Post = () => {
     return (
         <div className="post__body">
-            
           <div className="post__user-info">
-            <div><i class="fas fa-user"/></div>
-            <div>이름</div>
-            <div>기수정보</div>
-            <div>게시날짜</div>
+            <div><i className="fas fa-user"/></div>
+            <div>박지훈</div>
+            <div>IM28</div>
+            <div>21-06-14</div>
           </div>
 
           <div className="post__content">
@@ -17,7 +16,7 @@ const Post = () => {
           </div>
 
           <div className="post__btn-icon">
-            <div>댓글 수</div>
+            <div onClick={()=>console.log('PostingAndCommentList 모달 띄우기')}>댓글 (수)</div>
             <div>좋아요</div>
             <div>공유</div>
           </div>

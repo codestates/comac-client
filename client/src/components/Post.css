@@ -6,28 +6,87 @@
 
 
 .post__body{
+    border: 1px solid black;
+    border-radius: 10px;
     display: flex;
+    padding: 0.5% 3%;
     flex-direction: column;
     justify-content: space-between;
-    border: 5px solid yellow;
-    height: 100vh;
+    width: 60vw;
+    height: 40vh;
+    margin: 0.5%;
 }
 
 .post__user-info{
-    flex: 4;
-    justify-content: space-around;
-    align-content: center;
-    background-color: rgb(95, 206, 111);
-    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post__user-info div{
+    padding: 2%;
+}
+
+.post__user-info div:nth-child(2){
+    /* 이름 */
+    font-size: 1.8rem;
+}
+
+
+.post__user-info div:nth-child(3){
+    /* 기수정보 박스 */
+    font-size: 1.8rem;
+    margin-right: 10%;
 }
 
 .post__content{
-    flex: 5;
-    background-color: rgb(65, 71, 245);
-    
+    padding: 2%;
+    height: 70%;
+    overflow: scroll;
+
 }
 
-.post__btn-icon{
-    flex: 1;
-    background-color: rgb(225, 90, 90);
+.post__btn-icon{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.post__btn-icon div{
+    margin:1%;
+    padding: 1%;
+}
+
+
+.post__btn-icon div:hover{
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.post__btn-icon div:nth-child(2){
+    margin-right: 40%;
+}
+
+
+
+@media screen and (max-width: 768px){
+
+    .post__user-info div:nth-child(1),
+    .post__user-info div:nth-child(3),
+    .post__user-info div:nth-child(4){
+        display: none;
+    }
+
+    .post__user-info{
+        flex-direction: column;
+        align-items: flex-start;
+        /* margin-right: auto; */
+    }
+    .post__user-info div:nth-child(2){
+        padding: 10px; 
+        text-align: center;
+    }
+
+
 }
