@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.post__body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 5px solid yellow;
+    height: 100vh;
+}
+
+.post__user-info{
+    flex: 4;
+    justify-content: space-around;
+    align-content: center;
+    background-color: rgb(95, 206, 111);
+    border: 1px solid black;
+}
+
+.post__content{
+    flex: 5;
+    background-color: rgb(65, 71, 245);
+    
+}
+
+.post__btn-icon{
+    flex: 1;
+    background-color: rgb(225, 90, 90);
+}

@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.PostingAndCommentList__body{
+    padding: 2%;
+    border: 5px solid rgb(217, 255, 0);
+    height: 100vh;
+    overflow: scroll;
+}
+
+.PostingAndCommentList__form-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+}
+
+.PostingAndCommentList__form-box textarea{
+    width: 60%;
+    height: 50%;
+    outline: none;
+    resize: none;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+.PostingAndCommentList__form-box > div{
+    display: flex;
+    border: 1px solid black;
+    width: 10%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    
+}
+
+.PostingAndCommentList__form-box > div:hover{
+    cursor: pointer;
+    background-color: rgb(244, 243, 240);
+}
