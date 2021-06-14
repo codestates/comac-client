@@ -39,10 +39,12 @@
 
 
 .commentBox__contents__user-info > div:nth-child(2){
+    /*기수정보*/ 
     padding-right: 20%;
 }
 .commentBox__contents__user-info > div:nth-child(1),
 .commentBox__contents__user-info > div:nth-child(2){
+    /* 1 이름 , 2 기수정보*/
     font-size: large;
     font-weight: bold;
 }
@@ -55,5 +57,17 @@
     height: 7vh;
     text-align: start;
     overflow: scroll;
+
+}
+
+@media screen and (max-width: 768px){
+
+    .commentBox__profile,
+    .commentBox__contents__user-info > div:nth-child(2),
+    .commentBox__contents__user-info > div:nth-child(3){
+        /* 프사, 기수정보, 게시날짜 없애기*/
+        display: none;
+    }
+
 
 }
