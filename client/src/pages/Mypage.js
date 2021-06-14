@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
 // import { Link } from 'react-router-dom'
 
 const Mypage = () => {
+  // const [userInfo, SetUserInfo] = useState("")
     return (
         <div className="mypage__body">
           <Nav/>

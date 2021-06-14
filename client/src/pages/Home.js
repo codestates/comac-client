@@ -6,15 +6,17 @@ import './Home.css'
 
 const Home = () => {
     return (
-        <div className="home__body">
-           <Nav/>
-           <div className="post-list">
-            <Post/>
-            <Post/>
-            <Post/>
-           </div>
+      <div className="home__body">
 
+        <Nav/>
+        <div className="post-list">
+          <Post/>
+          <Post/>
+          <Post/>
+          <Post/>
         </div>
+
+      </div>
     );
 };
 
