@@ -1,7 +1,7 @@
 import React from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Mypage = () => {
     return (
