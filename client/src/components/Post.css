@@ -6,21 +6,22 @@
 
 
 .post__body{
-    border: 1px solid black;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.79);
     border-radius: 10px;
     display: flex;
     padding: 0.5% 3%;
     flex-direction: column;
     justify-content: space-between;
-    width: 60vw;
-    height: 40vh;
-    margin: 0.5%;
+    width: 50vw;
+    height: 30vh;
+    margin: 1%;
 }
 
 .post__user-info{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .post__user-info div{
@@ -39,21 +40,25 @@
     margin-right: 10%;
 }
 
+
+
 .post__content{
     padding: 2%;
-    height: 70%;
-    overflow: scroll;
-
+    height: 8vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
 }
 
 .post__btn-icon{ 
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    text-align: center;
 }
 
-.post__btn-icon div{
+
+.post__btn-icon div,
+.post__btn-icon i
+{   
     margin:1%;
     padding: 1%;
 }
@@ -64,9 +69,17 @@
   font-weight: bold;
 }
 
-.post__btn-icon div:nth-child(2){
+.post__btn-icon i:hover{
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+
+.post__btn-icon i:nth-child(2){
     margin-right: 40%;
 }
+
+
 
 
 
@@ -86,6 +99,19 @@
     .post__user-info div:nth-child(2){
         padding: 10px; 
         text-align: center;
+    }
+
+    .post__user-info i:nth-child(2){
+        padding: 10px; 
+        text-align: center;
+    }
+
+    .post__content{
+        height: 50%;
+    }
+
+    .post__btn-icon i{
+        display: none;
     }
 
 
