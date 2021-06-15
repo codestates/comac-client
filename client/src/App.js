@@ -54,7 +54,8 @@ function App() {
         render={() => <Mypage userInfo={userInfo} accessToken={accessToken} />}/>
       <Route 
         path="/home"
-        render={() => <Home userInfo={userInfo} accessToken={accessToken} />}/>
+        render={() => <Home userInfo={userInfo} accessToken={accessToken}/>}/>
+
       <Route 
         path="/writing"
         render={() => <Writing userInfo={userInfo} accessToken={accessToken} />}/>
