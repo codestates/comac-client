@@ -4,8 +4,6 @@ import server from '../apis/server'
 import { GoogleLogin } from 'react-google-login';
 // import axios from 'axios'
 
-const URL = 'http://localhost:3000'
-
 const Login = ({ handleResponseSuccess }) => {
  
   const [userInfo, setUserInfo] = useState({
@@ -43,7 +41,7 @@ const Login = ({ handleResponseSuccess }) => {
       return setErrMsg('Check your ID or PW')
     }else {
       const { username, password } = userInfo
-      return await axios.post(`${URL}/api/login`, {
+      return await server.post(`/api/login`, {
         username,
         password
       })
