@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 
-const Login = () => {
+const Login = ({ handleResponseSuccess }) => {
  
   const [ id, setId ] = useState("")
   const [ pw, setPw ] = useState("")
@@ -24,17 +24,16 @@ const Login = () => {
   }
 
   const handleButtonLogin = async () => {
-    const url = 'https://localhost:3000/login'
+    const url = 'https://coMac/login'
     if(id.length === 0 || pw.length === 0) {
       setErrMsg('Check your ID or PW')
     }else {
       await axios.post(url, {
         username : id,
         password : pw,
-        // 로그인 했을 경우 then 코드 구현 남음.
       })
-      .then((token) => {
-        
+      .then((data) => {
+        handleResponseSuccess(data.data.data.accessToken) // 토큰 보냄.
       })
       .catch(err => {
         setErrMsg(err)
