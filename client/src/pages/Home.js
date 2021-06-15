@@ -4,6 +4,9 @@ import Nav from '../components/Nav'
 import Post from '../components/Post'
 import axios from 'axios'
 import './Home.css'
+import axios from 'axios'
+
+const URL = 'http://localhost:3000'
 
 
 const Home = ({userInfo, accessToken}) => {
@@ -22,6 +25,7 @@ const Home = ({userInfo, accessToken}) => {
       axios.get('http://localhost:3000/post')
       .then(data=>SetPostList(data))
   },[])
+
 
     console.log(PostList)
     return (
