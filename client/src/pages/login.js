@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+import server from '../apis/server'
+import { GoogleLogin } from 'react-google-login';
+// import axios from 'axios'
 
 
 const Login = ({ handleResponseSuccess }) => {
@@ -23,12 +25,27 @@ const Login = ({ handleResponseSuccess }) => {
     setPw(value)
   }
 
+  const handleGoogleLogin = async googleData => {
+    await server.post("/login/google", {
+      token: googleData.tokenId,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(data => {
+      handleResponseSuccess(data.data.data.accessToken)
+      console.log(data)
+    })
+    .catch(err => {
+      setErrMsg(err)
+    })
+  }
+
   const handleButtonLogin = async () => {
-    const url = 'https://coMac/login'
     if(id.length === 0 || pw.length === 0) {
       setErrMsg('Check your ID or PW')
     }else {
-      await axios.post(url, {
+      await server.post('/login', {
         username : id,
         password : pw,
       })
@@ -72,6 +89,14 @@ const Login = ({ handleResponseSuccess }) => {
           </div>
           <div className="login__social-login-button">
             <i className="fab fa-google"></i>
+            <GoogleLogin
+              clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+              render={renderProps => (
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>Google Login</button>
+              )}
+              onSuccess={handleGoogleLogin}
+              onFailure={handleGoogleLogin}
+            />
           </div>
           <div className="login__error-message">
             {errMsg}

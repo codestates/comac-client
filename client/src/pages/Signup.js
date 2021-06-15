@@ -51,7 +51,7 @@ const Signup = () => {
   }
 
   const handleButtonSignup = async () => {
-    const url = 'https://localhost:3000/signup'
+    const url = 'http://localhost:3000/api/signup'
     if(id && pw && checkPw && name && generation) {
       pw === checkPw ?
       await axios.post(url, {
