@@ -1,4 +1,4 @@
-import react, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Login from './pages/login'   
@@ -19,7 +19,7 @@ function App() {
     const objToken = { Authorization: `Bearer ${token}`}
     setIsLogin(true)
     setAccessToken(objToken)
-    const url = "https://localhost:3000/user"
+    const url = "https://localhost:3000/api/user"
     await axios.get(url, { 
       headers: accessToken // 객체형태의 토큰
     })

@@ -1,19 +1,23 @@
 import React,{useState} from 'react'
 import PostingAndCommentList from './PostingAndCommentList'
 import './Post.css'
+import axios from 'axios';
 
-const Post = () => {
-
+const Post = ({data}) => {
+  //
   const [isOpen, setIsOpen] = useState(false);
-  
+  //state를 이용해서 모달을 열고 닫을수있게 했습니다 
   const OpenModal = () => {
     setIsOpen(true);
-    console.log(isOpen)
-  };
-
+  };//열기 
   const CloseModal = () => {
     setIsOpen(false);
-  };
+  };//닫기 
+
+
+  
+  //data.
+
 
   return (
     

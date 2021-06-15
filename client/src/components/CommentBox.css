@@ -49,6 +49,17 @@
     font-weight: bold;
 }
 
+.commentBox__contents__user-info > i{
+    /* 좋아요 버튼 */
+    cursor: pointer;
+}  
+
+.commentBox__contents__user-info > i:hover{
+    /* 좋아요 버튼 */
+    font-weight: bold;
+}  
+
+
 .commentBox__contents__comment{
     /* 댓글내용 */
     border: 1px solid black;

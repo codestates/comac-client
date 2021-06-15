@@ -1,39 +1,52 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
-// import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
-const Mypage = () => {
-  // const [userInfo, SetUserInfo] = useState("")
-    return (
-        <div className="mypage__body">
-          <Nav/>
-          <div className="user-info">
+const Mypage = ({userInfo}) => {
 
-            <div className="user-info__profile">
-              <i className="fas fa-user"></i>
-            </div>
+  const history = useHistory();
 
-            <div className="user-info__links">
-              <div><a href="#" title="codestates">링크</a></div>
-              <div><a href="#" title="github">링크</a></div>
-              <div><a href="#" title="coplit">링크</a></div>
-            </div>
+  if(Object.keys(userInfo).length === 0){
+    history.push('/')
+  }
 
-            <div className="user-info__info-box">
-              <div>이름</div>
-              <div>닉네임</div>
-              <div>기수정보</div>
-            </div>
+  const {username, name, generation, img } = userInfo
+  
+  return (
+      <div className="mypage__body">
+        <Nav/>
+        <div className="user-info">
 
-            <div className="user-info__button">
-              <div>확인</div>
-              <div>수정</div>
-            </div>
-
+          <div className="user-info__profile">
+            <i className="fas fa-user"></i>
           </div>
+
+          <div className="user-info__links">
+            {img ? img.map((link,index) => { 
+              return ( 
+                <div key={index}>
+                  <img src={link} alt=""/>
+                </div> 
+              )}
+            ) : null}
+          </div>
+
+          <div className="user-info__info-box">
+            <div>{username}</div>
+            <div>{name}</div>
+            <div>{generation}</div>
+          </div>
+
+          <div className="user-info__button">
+            <div>확인</div>
+            <div>수정</div>
+          </div>
+
         </div>
-    );
+      </div>
+  );
+
 };
 
 export default Mypage;
