@@ -6,7 +6,8 @@
 
 
 .post__body{
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid #fff(0, 0, 0);
+    box-shadow: 10px 10px 30px #5a5a5a, -10px -10px 30px #ffffff;
     background-color: rgba(255, 255, 255, 0.79);
     border-radius: 10px;
     display: flex;
@@ -21,7 +22,7 @@
 .post__user-info{
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    /* align-items: flex-end; */
 }
 
 .post__user-info div{
@@ -30,14 +31,17 @@
 
 .post__user-info div:nth-child(2){
     /* 이름 */
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+    margin-right: 180px;
+    
 }
 
 
 .post__user-info div:nth-child(3){
     /* 기수정보 박스 */
-    font-size: 1.8rem;
-    margin-right: 10%;
+    font-size: 1.2rem;
+    color: #d49466;
+    /* margin-right: 10%; */
 }
 
 
@@ -59,8 +63,8 @@
 .post__btn-icon div,
 .post__btn-icon i
 {   
-    margin:1%;
-    padding: 1%;
+   padding: 8px 12px; 
+    
 }
 
 
@@ -83,7 +87,7 @@
 
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 999px){
 
     .post__user-info div:nth-child(1),
     .post__user-info div:nth-child(3),

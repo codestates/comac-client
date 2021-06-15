@@ -30,12 +30,12 @@ const Home = ({userInfo, accessToken}) => {
     console.log(PostList)
     return (
       <div className="home__body">
-
-        <Nav/>
+        <Nav name={'HOME'}/>
         <div className="post-list">
           {PostList ? PostList.data.data.map((postData,index) => {
             return <Post key={index} postData={postData} accessToken={accessToken}/>
           }) : <div className="nothing"> 게시물이 없습니다 </div>
+
           }
         </div>
 

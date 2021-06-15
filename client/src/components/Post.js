@@ -40,8 +40,8 @@ const Post = ({postData, accessToken}) => {
           </div>
 
           <div className="post__btn-icon">
-            <div onClick={()=>OpenModal()}>댓글</div>
             <i class="far fa-thumbs-up"/>
+            <div onClick={()=>OpenModal()}>댓글</div>
             <i class="far fa-share-square"/>
           </div>
         </div>

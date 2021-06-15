@@ -15,7 +15,7 @@ const Mypage = ({userInfo}) => {
   
   return (
       <div className="mypage__body">
-        <Nav/>
+        <Nav name={'MYPAGE'}/>
         <div className="user-info">
 
           <div className="user-info__profile">

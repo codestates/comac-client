@@ -11,7 +11,9 @@ const PostingAndCommentList = ({CommentList, CloseModal, postId, accessToken}) =
       <div className="overlay-modal">
         <div className="PostingAndCommentList__body">
           <div className="PostingAndCommentList__comment-list">
+
             {CommentList.data.data.map((commentData,index)=> <CommentBox key={index} commentData={commentData}/>)}
+
           </div>
           <div className="PostingAndCommentList__form-box">
             <textarea onChange={(e)=>setComment(e.target.value)}>{null}</textarea>

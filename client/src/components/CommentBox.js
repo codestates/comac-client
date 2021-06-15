@@ -17,9 +17,9 @@ const CommentBox = ({commentData}) =>{
               <i class="far fa-thumbs-up"/>
               <div>{createdAt}</div>
             </div>
+
             <div className="commentBox__contents__comment">{content} </div>
           </div>   
-
         </div>
     )
 }
