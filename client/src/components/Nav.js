@@ -10,10 +10,10 @@ const Nav = () => {
           </a>
           <div className="nav-bar__links">
             <div><Link id="home-link" to="/home">HOME</Link></div>
-            <div>MY PAGE</div>
+            <div><Link id="mypage-link" to="/mypage">MYPAGE</Link></div>
           </div>
 
-          <div className="nav-bar__page-name">MY PAGE</div>
+          <div className="nav-bar__page-name">MYPAGE</div>
           <div className="nav-bar__post-btn">WRITE</div>
 
         </nav>
