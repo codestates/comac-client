@@ -4,8 +4,6 @@ import server from '../apis/server'
 import { GoogleLogin } from 'react-google-login';
 // import axios from 'axios'
 
-const URL = 'http://localhost:3000'
-
 const Login = ({ handleResponseSuccess }) => {
  
   const [userInfo, setUserInfo] = useState({
@@ -43,7 +41,7 @@ const Login = ({ handleResponseSuccess }) => {
       return setErrMsg('Check your ID or PW')
     }else {
       const { username, password } = userInfo
-      return await axios.post(`${URL}/api/login`, {
+      return await server.post(`/api/login`, {
         username,
         password
       })
@@ -86,11 +84,10 @@ const Login = ({ handleResponseSuccess }) => {
             <Link id="signup-link" to='/signup'>SIGN UP</Link>
           </div>
           <div className="login__social-login-button">
-            <i className="fab fa-google"></i>
             <GoogleLogin
               clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
               render={renderProps => (
-                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>Google Login</button>
+                <button className="fab fa-google" onClick={renderProps.onClick} disabled={renderProps.disabled}>GoogleLogin</button>
               )}
               onSuccess={handleGoogleLogin}
               onFailure={handleGoogleLogin}
