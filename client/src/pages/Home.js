@@ -2,13 +2,21 @@ import React, { useState, useEffect } from 'react';
 import Nav from '../components/Nav'
 import Post from '../components/Post'
 import './Home.css'
+import axios from 'axios'
 
+const URL = 'http://localhost:3000'
 
-const Home = () => {
-  const [PostList, SetPostList] = useState(null)
+const Home = (props) => {
+  const [PostList, SetPostList] = useState([])
   
   useEffect(()=>{
     //post_id
+    axios.get(`${URL}/api/post`,{
+      headers: props.accessToken
+    })
+    .then((res) => {
+      console.log(res.data)
+    })
   })
 
     return (
