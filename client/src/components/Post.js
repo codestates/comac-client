@@ -1,12 +1,12 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import PostingAndCommentList from './PostingAndCommentList'
+import axios from 'axios'
 import './Post.css'
-import axios from 'axios';
 
-const Post = ({data}) => {
-  //
+const Post = ({postData, accessToken}) => {
+
   const [isOpen, setIsOpen] = useState(false);
-  //state를 이용해서 모달을 열고 닫을수있게 했습니다 
+  //모달 state 
   const OpenModal = () => {
     setIsOpen(true);
   };//열기 
@@ -14,29 +14,34 @@ const Post = ({data}) => {
     setIsOpen(false);
   };//닫기 
 
-
+  const [CommentList, SetCommentList] = useState(null)
+  //댓글목록 state
   
-  //data.
+  useEffect(()=>{
+    //댓글목록 불러오기 
+    axios.get(`http://localhost:3000/comment/${id}`)
+    .then(data=>SetCommentList(data))
+  },[])
 
-
+  const {id, username, generation, createdAt, content} = postData
   return (
     
         <div className="post__body">
-          {isOpen ? (<div ><PostingAndCommentList CloseModal={CloseModal} /></div>) : null}
+          {isOpen ? (<div ><PostingAndCommentList postId={id}/*댓글목록 불러올 게시물아이디*/ CommentList={CommentList} CloseModal={CloseModal} accessToken={accessToken}/></div>) : null}
           <div className  ="post__user-info">
             <div><i className="fas fa-user"/></div>
-            <div>박지훈</div>
-            <div>IM28</div>
-            <div>21-06-14</div>
+            <div>{username}</div>
+            <div>{generation}</div>
+            <div>{createdAt}</div>
           </div>
           
           <div className="post__content">
-            게시물 내용
+            {content}
           </div>
 
           <div className="post__btn-icon">
-            <div onClick={()=>OpenModal()}>댓글</div>
             <i class="far fa-thumbs-up"/>
+            <div onClick={()=>OpenModal()}>댓글</div>
             <i class="far fa-share-square"/>
           </div>
         </div>
