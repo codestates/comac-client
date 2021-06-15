@@ -2,7 +2,7 @@ import React from 'react'
 import './Nav.css'
 import { Link } from 'react-router-dom'
 
-const Nav = () => {
+const Nav = ({ name }) => {
     return (
         <nav className="nav-bar">
           <a href="#" className="nav-bar__toggle">
@@ -13,8 +13,8 @@ const Nav = () => {
             <div><Link id="mypage-link" to="/mypage">MYPAGE</Link></div>
           </div>
 
-          <div className="nav-bar__page-name">MYPAGE</div>
-          <div className="nav-bar__post-btn">WRITE</div>
+          <div className="nav-bar__page-name">{name}</div>
+          <div className="nav-bar__post-btn"><Link to="/writing">WRITE</Link></div>
 
         </nav>
     )

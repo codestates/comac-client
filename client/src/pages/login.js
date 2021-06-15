@@ -24,7 +24,7 @@ const Login = ({ handleResponseSuccess }) => {
   }
 
   const handleButtonLogin = async () => {
-    const url = 'https://coMac/login'
+    const url = 'https://localhost:3000/login'
     if(id.length === 0 || pw.length === 0) {
       setErrMsg('Check your ID or PW')
     }else {

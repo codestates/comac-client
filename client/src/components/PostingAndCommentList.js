@@ -15,6 +15,7 @@ const PostingAndCommentList = ({CloseModal}) =>{
             <CommentBox/>
             <CommentBox/>
             <CommentBox/>
+            <CommentBox/>
           </div>
           <div className="PostingAndCommentList__form-box">
             <textarea onChange={(e)=>setComment(e.target.value)}>{null}</textarea>

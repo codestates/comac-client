@@ -17,9 +17,8 @@ const CommentBox = () =>{
               <i class="far fa-thumbs-up"/>
               <div>2021-06-13</div>
             </div>
-            <div className="commentBox__contents__comment">댓글내용 </div>
+            <div className="commentBox__contents__comment">댓글내용ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</div>
           </div>   
-
         </div>
     )
 }

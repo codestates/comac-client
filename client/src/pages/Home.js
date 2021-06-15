@@ -17,13 +17,16 @@ const Home = () => {
 
     return (
       <div className="home__body">
-
-        <Nav/>
+        <Nav name={'HOME'}/>
         <div className="post-list">
           {/* {PostList ? PostList.map((data,index) => {
             return <Post post={post}/>
           }) : <div className="nothing"> 게시물이 없습니다 </div>
           } */ }
+          <Post/>
+          <Post/>
+          <Post/>
+          <Post/>
           <Post/>
           <Post/>
           <Post/>
