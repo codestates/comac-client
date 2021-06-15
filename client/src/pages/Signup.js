@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom' 
+import axios from 'axios'
 
 const Signup = () => {
   const [ id, setId ] = useState("")
   const [ pw, setPw ] = useState("")
-  const [ nick, setNick ] = useState("")
+  const [ checkPw, setCheckPw ] = useState("")
+  const [ name, setName ] = useState("")
   const [ generation, setGeneration ] = useState("")
+  const [ errMsg, setErrMsg ] = useState("")
   
   const updateId = (e) => {
     const {
@@ -21,11 +24,18 @@ const Signup = () => {
     setPw(value)
   };
 
-  const updateNick = (e) => {
+  const updateCheckPw = (e) => {
     const {
       target: { value }
     } = e
-    setNick(value)
+    setCheckPw(value)
+  };
+
+  const updateName = (e) => {
+    const {
+      target: { value }
+    } = e
+    setName(value)
   };
 
   const updateGeneration = (e) => {
@@ -34,6 +44,31 @@ const Signup = () => {
     } = e
     setGeneration(value)
   };
+
+  const setImage = () => {
+    return null
+    // 이미지 넣을 방법 생각해보기
+  }
+
+  const handleButtonSignup = async () => {
+    const url = 'https://localhost:3000/signup'
+    if(id && pw && checkPw && name && generation) {
+      pw === checkPw ?
+      await axios.post(url, {
+        username: id,
+        password: pw,
+        name,
+        generation,
+        img: setImage,
+      })
+      .catch(err => {
+        setErrMsg(err);
+      })
+      : setErrMsg('패스워드를 확인해주세요.')
+    }else if((id && pw && checkPw && name && generation).length === 0) {
+      setErrMsg('모든 정보를 입력해주세요.')
+    } 
+  }
 
   return (
         <div className="signup__body">
@@ -48,20 +83,21 @@ const Signup = () => {
               onChange={updatePw}/> 
             </div>
             <div className="signup__user-info">
-              <input type="password" placeholder="비밀번호확인"/> 
+              <input type="password" placeholder="비밀번호확인" value={checkPw}
+              onChange={updateCheckPw}/> 
             </div>
             <div className="signup__user-info">
-              <input type="text" placeholder="닉네임" value={nick}
-              onChange={updateNick}/> 
+              <input type="text" placeholder="이름" value={name}
+              onChange={updateName}/> 
             </div>
             <div className="signup__user-info">
               <input type="text" placeholder="기수(ex: IM28)" value={generation}
               onChange={updateGeneration}/> 
             </div>
-            <button className="signup__button">SIGN UP</button>
+            <button className="signup__button" onClick={handleButtonSignup}>SIGN UP</button>
             <Link id="login-link" to='/'>이미 아이디가 있으신가요?</Link>
             <div className="signup__error-message">
-            에러메세지
+             {errMsg}
             </div>
           </div>
         </div>
