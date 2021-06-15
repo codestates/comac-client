@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.writing__body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;   
+  background: url(../images/image4.jpeg) no-repeat center;
+  background-size: cover;
+}
+
+.writing__nav {
+  display:flex;
+  align-items: center;
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid #777;
+  background-color: #263343;
+  color: #fff;
+}
+
+#home {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-left: 24px;
+  text-align: center;
+  width: 8%;
+}
+
+#home:hover {
+  background: #777;
+  border-radius: 24px;
+}
+
+.writing__nav > div {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 8px;
+  align-self: center;
+  width: 100%;
+  margin-right: 108px;
+}
+
+.writing__text-box {
+  width: 60%;
+  height: 50%;
+  margin-top: 40px;
+  align-self: center;
+}
+
+.writing__text-box > textarea {
+  width: 100%;
+  height: 100%;
+  padding: 24px 32px;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  border-radius: 65px;
+  background: #e0e0e0;
+  box-shadow:  10px 10px 30px #5a5a5a, -10px -10px 30px #ffffff;
+}
+
+.writing__button {
+  text-align: center;
+  border: 1px solid black;
+  /* background-color: #263343; */
+  color: #fff;
+  border-radius: 65px;
+  background: #e0e0e0;
+  box-shadow:  10px 10px 30px #5a5a5a, -10px -10px 30px #ffffff;
+  height: 10%;
+  padding-top: 8px;
+  cursor: pointer;
+}
+
+.writing__button:hover {
+  background-color: #777;
+}
+

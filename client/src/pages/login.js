@@ -1,12 +1,49 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 const Login = () => {
  
-  // const [ idLen, setIdLen ] = useState("")
+  const [ id, setId ] = useState("")
+  const [ pw, setPw ] = useState("")
+  const [ errMsg, setErrMsg ] = useState("");
   
- 
+  const updateId = (e) => {
+    const {
+      target: { value }
+    } = e
+    setId(value)
+  };
+
+  const updatePw = (e) => {
+    const {
+      target: { value }
+    } = e
+    setPw(value)
+  }
+
+  const handleButtonLogin = async () => {
+    const url = 'https://localhost:3000/login'
+    if(id.length === 0 || pw.length === 0) {
+      setErrMsg('Check your ID or PW')
+    }else {
+      await axios.post(url, {
+        username : id,
+        password : pw,
+        // 로그인 했을 경우 then 코드 구현 남음.
+      })
+      .then((token) => {
+        
+      })
+      .catch(err => {
+        setErrMsg(err)
+      })
+    }
+  }
+
+  
+  
   return (
     <div className="login__body">
       <div className="login__body-child">
@@ -19,15 +56,17 @@ const Login = () => {
         <div className="login__box">
           <span>LOG IN</span>
           <div className="login__id-pw">
-            <input id="id" name="id" type="text" autocomplete="off" required />
+            <input id="id" name="id" type="text" autoComplete="off" required value={id}
+              onChange={updateId} />
             <label for="id">ID</label>  
           </div>
           <div className="login__id-pw">
-            <input id="pw" name="pw" type="password" autocomplete="off" required />
+            <input id="pw" name="pw" type="password" autoComplete="off" required value={pw}
+              onChange={updatePw} />
             <label for="pw">Password</label>
           </div>
           <div className="login__basic-login-button">
-            <button id="login-btn" type="submit" >LOGIN</button>
+            <button id="login-btn" type="submit" onClick={handleButtonLogin}>LOGIN</button>
           </div>
           <div className="login__signup-link">
             <Link id="signup-link" to='/signup'>SIGN UP</Link>
@@ -36,7 +75,7 @@ const Login = () => {
             <i className="fab fa-google"></i>
           </div>
           <div className="login__error-message">
-            error message
+            {errMsg}
           </div>  
         </div>
       </div>  
