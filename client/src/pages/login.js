@@ -88,11 +88,10 @@ const Login = ({ handleResponseSuccess }) => {
             <Link id="signup-link" to='/signup'>SIGN UP</Link>
           </div>
           <div className="login__social-login-button">
-            <i className="fab fa-google"></i>
             <GoogleLogin
               clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
               render={renderProps => (
-                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>Google Login</button>
+                <button className="fab fa-google" onClick={renderProps.onClick} disabled={renderProps.disabled}>GoogleLogin</button>
               )}
               onSuccess={handleGoogleLogin}
               onFailure={handleGoogleLogin}
