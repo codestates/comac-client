@@ -14,6 +14,7 @@ const CommentBox = () =>{
             <div className="commentBox__contents__user-info">
               <div>박지훈</div>
               <div>IM28</div>
+              <i class="far fa-thumbs-up"/>
               <div>2021-06-13</div>
             </div>
             <div className="commentBox__contents__comment">댓글내용 </div>
