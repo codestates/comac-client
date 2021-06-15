@@ -2,18 +2,22 @@ import React, { useState, useEffect } from 'react';
 import Nav from '../components/Nav'
 import Post from '../components/Post'
 import './Home.css'
+import axios from 'axios'
 
+const URL = 'http://localhost:3000'
 
-const Home = () => {
-  const [PostList, SetPostList] = useState(null)
-  //post리스트
-  //서버로 요청 
-
-  // useEffect(async()=>{
-    //const data = await axios.get('https://coMac/api/post')
-    //SetPostList(data)
-    //
-  // },[PostList])
+const Home = (props) => {
+  const [PostList, SetPostList] = useState([])
+  
+  useEffect(()=>{
+    //post_id
+    axios.get(`${URL}/api/post`,{
+      headers: props.accessToken
+    })
+    .then((res) => {
+      console.log(res.data)
+    })
+  })
 
     return (
       <div className="home__body">

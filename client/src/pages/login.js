@@ -1,42 +1,38 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+const URL = 'http://localhost:3000'
 
 const Login = ({ handleResponseSuccess }) => {
  
-  const [ id, setId ] = useState("")
-  const [ pw, setPw ] = useState("")
+  const [userInfo, setUserInfo] = useState({
+    username : '',
+    password : ''
+  })
   const [ errMsg, setErrMsg ] = useState("");
   
-  const updateId = (e) => {
-    const {
-      target: { value }
-    } = e
-    setId(value)
-  };
-
-  const updatePw = (e) => {
-    const {
-      target: { value }
-    } = e
-    setPw(value)
+  const handleInputValue = (key) => (e) => {
+    setUserInfo({
+      ...userInfo,
+      [key]: e.target.value
+    })
   }
 
   const handleButtonLogin = async () => {
-    const url = 'https://coMac/login'
-    if(id.length === 0 || pw.length === 0) {
-      setErrMsg('Check your ID or PW')
+    if(!userInfo.username || !userInfo.password) {
+      return setErrMsg('Check your ID or PW')
     }else {
-      await axios.post(url, {
-        username : id,
-        password : pw,
+      const { username, password } = userInfo
+      return await axios.post(`${URL}/api/login`, {
+        username,
+        password
       })
       .then((data) => {
         handleResponseSuccess(data.data.data.accessToken) // 토큰 보냄.
       })
       .catch(err => {
-        setErrMsg(err)
+        return setErrMsg('Check your ID or PW')
       })
     }
   }
@@ -55,13 +51,13 @@ const Login = ({ handleResponseSuccess }) => {
         <div className="login__box">
           <span>LOG IN</span>
           <div className="login__id-pw">
-            <input id="id" name="id" type="text" autoComplete="off" required value={id}
-              onChange={updateId} />
+            <input id="id" name="id" type="text" autoComplete="off"
+              onChange={handleInputValue('username')} />
             <label for="id">ID</label>  
           </div>
           <div className="login__id-pw">
-            <input id="pw" name="pw" type="password" autoComplete="off" required value={pw}
-              onChange={updatePw} />
+            <input id="pw" name="pw" type="password" autoComplete="off"
+              onChange={handleInputValue('password')} />
             <label for="pw">Password</label>
           </div>
           <div className="login__basic-login-button">
