@@ -27,6 +27,7 @@ const Signup = () => {
   // }
 
   const handleButtonSignup = async () => {
+
     const {username, password, checkPw, name, generation} = userInfo
     if(!username || !password || !checkPw || !name || !generation) {
       return setErrMsg('모든 정보를 입력해주세요.')

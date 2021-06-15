@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+import server from '../apis/server'
+import { GoogleLogin } from 'react-google-login';
+// import axios from 'axios'
 
 const URL = 'http://localhost:3000'
 
@@ -16,6 +18,22 @@ const Login = ({ handleResponseSuccess }) => {
     setUserInfo({
       ...userInfo,
       [key]: e.target.value
+    })
+  }
+
+  const handleGoogleLogin = async googleData => {
+    await server.post("/login/google", {
+      token: googleData.tokenId,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then(data => {
+      handleResponseSuccess(data.data.data.accessToken)
+      console.log(data)
+    })
+    .catch(err => {
+      setErrMsg(err)
     })
   }
 
@@ -69,6 +87,14 @@ const Login = ({ handleResponseSuccess }) => {
           </div>
           <div className="login__social-login-button">
             <i className="fab fa-google"></i>
+            <GoogleLogin
+              clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+              render={renderProps => (
+                <button onClick={renderProps.onClick} disabled={renderProps.disabled}>Google Login</button>
+              )}
+              onSuccess={handleGoogleLogin}
+              onFailure={handleGoogleLogin}
+            />
           </div>
           <div className="login__error-message">
             {errMsg}
