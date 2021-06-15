@@ -1,8 +1,8 @@
 import React from 'react'
 import './CommentBox.css'
 
-const CommentBox = () =>{
-  
+const CommentBox = ({commentData}) =>{
+    const {content, createdAt} = commentData
     return (
         <div className="commentBox__body">
 
@@ -15,9 +15,10 @@ const CommentBox = () =>{
               <div>박지훈</div>
               <div>IM28</div>
               <i class="far fa-thumbs-up"/>
-              <div>2021-06-13</div>
+              <div>{createdAt}</div>
             </div>
-            <div className="commentBox__contents__comment">댓글내용ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</div>
+
+            <div className="commentBox__contents__comment">{content} </div>
           </div>   
         </div>
     )
