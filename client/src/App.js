@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Login from './pages/login'   
@@ -11,25 +11,26 @@ import server from './apis/server'
 
 function App() {
   const [ isLogin, setIsLogin ] = useState(false);
-  const [ userInfo, setUserInfo ] = useState({
-    id: 0,
-    username: '',
-    generation: '',
-    img: '',
-    createdAt: ''
-  });
-  const [ accessToken, setAccessToken] = useState("");
+  const [ userInfo, setUserInfo ] = useState(JSON.parse(localStorage.getItem('userInfo')));
+  const [ accessToken, setAccessToken] = useState(JSON.parse(localStorage.getItem('accessToken')));
+
+  useEffect(() => {
+    if(accessToken) setIsLogin(true)
+    else setIsLogin(false);
+  },[accessToken])
 
   const handleResponseSuccess = async (token) => {
-    setAccessToken({ Authorization: `Bearer ${token}`})
-    setIsLogin(true)
-    await server.get(`/user`, { 
-      headers: accessToken  // 객체형태의 토큰
-    })
-    .then(({ data }) => {  // userinfo
-      const { id, username, generation, img, createdAt} = data.data
-      setUserInfo({ id, username, generation, img, createdAt })
-    })
+    if(token) {
+      await server.get(`/user`, { 
+        headers: { Authorization: `Bearer ${token}`}  // 객체형태의 토큰
+      })
+      .then(({ data }) => {  // userinfo
+        const { id, username, generation, img, createdAt} = data.data
+        setIsLogin(true)
+        localStorage.setItem('accessToken', JSON.stringify({ Authorization: `Bearer ${token}` }))
+        localStorage.setItem('userInfo', JSON.stringify({ id, username, generation, img, createdAt }))
+      })
+    }
   }
 
   return (
