@@ -5,6 +5,7 @@ import Post from '../components/Post'
 import server from '../apis/server'
 import './Home.css'
 
+// const URL = 'http://localhost:3000'
 
 const Home = ({userInfo, accessToken}) => {
 

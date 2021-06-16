@@ -31,7 +31,7 @@ const Login = ({ handleResponseSuccess }) => {
       console.log(data)
     })
     .catch(err => {
-      setErrMsg(err)
+      setErrMsg('err social login')
     })
   }
 
