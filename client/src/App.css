@@ -141,12 +141,13 @@
   text-decoration: none;
 }
   
-.login__social-login-button button {
+.login__social-login-button img {
   font-size: 1.3rem;
   outline: none;
   cursor: pointer;
   color: var(--accent-color);
-  background: #5a5a5a;
+  /* background: url(./images/image6.png); */
+  
 }
 
 .login__social-login-button button:hover {
