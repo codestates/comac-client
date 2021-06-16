@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import Nav from '../components/Nav'
 import Post from '../components/Post'
-import axios from 'axios'
-import './Home.css'
 import server from '../apis/server'
+import './Home.css'
 
-const URL = 'http://localhost:3000'
-
+// const URL = 'http://localhost:3000'
 
 const Home = ({userInfo, accessToken}) => {
 
@@ -22,7 +20,7 @@ const Home = ({userInfo, accessToken}) => {
 
   useEffect(()=>{
     //리스트 업데이트마다 리렌더 
-     server.get('/post')
+      server.get('/post')
       .then(data=>SetPostList(data))
   },[])
 
