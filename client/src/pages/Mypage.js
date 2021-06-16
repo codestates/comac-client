@@ -7,9 +7,9 @@ const Mypage = ({userInfo}) => {
 
   const history = useHistory();
 
-  if(Object.keys(userInfo).length === 0){
-    history.push('/')
-  }
+  // if(Object.keys(userInfo).length === 0){
+  //   history.push('/')
+  // }
 
   const {username, name, generation, img } = userInfo
   
@@ -19,17 +19,14 @@ const Mypage = ({userInfo}) => {
         <div className="user-info">
 
           <div className="user-info__profile">
-            <i className="fas fa-user"></i>
+            {/* <i className="fas fa-user"></i> */}
+            <img src={img} />
           </div>
 
           <div className="user-info__links">
-            {img ? img.map((link,index) => { 
-              return ( 
-                <div key={index}>
-                  <img src={link} alt=""/>
-                </div> 
-              )}
-            ) : null}
+            <div title="codestates"><a href="https://codestates.com">Link</a></div>
+            <div title="github"><a href="https://github.com">Link</a></div>
+            <div title="urclass"><a href="https://urclass.codestates.com/">Link</a></div>
           </div>
 
           <div className="user-info__info-box">
@@ -50,3 +47,12 @@ const Mypage = ({userInfo}) => {
 };
 
 export default Mypage;
+
+
+            /* {img ? img.map((link,index) => { 
+              return ( 
+                <div key={index}>
+                  <img src={link} alt=""/>
+                </div> 
+              )}
+            ) : null} */

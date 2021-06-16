@@ -54,8 +54,6 @@ const Login = ({ handleResponseSuccess }) => {
     }
   }
 
-  
-  
   return (
     <div className="login__body">
       <div className="login__body-child">

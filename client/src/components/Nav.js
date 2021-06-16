@@ -14,7 +14,7 @@ const Nav = ({ name }) => {
           </div>
 
           <div className="nav-bar__page-name">{name}</div>
-          <div className="nav-bar__post-btn" onClick={ () => localStorage.clear() } >로그아웃</div>
+          <div className="nav-bar__post-btn" onClick={ () => localStorage.clear() } >LOGOUT</div>
           <div className="nav-bar__post-btn"><Link to="/writing">WRITE</Link></div>
 
         </nav>

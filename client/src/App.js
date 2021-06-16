@@ -21,10 +21,10 @@ function App() {
         headers: { Authorization: `Bearer ${token}`}  // 객체형태의 토큰
       })
       .then(({ data }) => {  // userinfo
-        const { id, username, generation, img, createdAt} = data.data
+        const { id, username, name, generation, img, createdAt} = data.data
         setIsLogin(true)
         localStorage.setItem('accessToken', JSON.stringify({ Authorization: `Bearer ${token}` }))
-        localStorage.setItem('userInfo', JSON.stringify({ id, username, generation, img, createdAt }))
+        localStorage.setItem('userInfo', JSON.stringify({ id, username, name, generation, img, createdAt }))
       })
       window.location.reload();
     }
