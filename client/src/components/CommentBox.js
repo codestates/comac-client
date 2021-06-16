@@ -7,14 +7,14 @@ const CommentBox = ({commentData}) =>{
         <div className="commentBox__body">
 
           <div className="commentBox__profile">
-            <i class="fas fa-user"></i>
+            <i className="fas fa-user"></i>
           </div>
 
           <div className="commentBox__contents">
             <div className="commentBox__contents__user-info">
               <div>박지훈</div>
               <div>IM28</div>
-              <i class="far fa-thumbs-up"/>
+              <i className="far fa-thumbs-up"/>
               <div>{createdAt}</div>
             </div>
 

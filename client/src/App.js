@@ -1,4 +1,4 @@
-import react, { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Login from './pages/login'   
@@ -7,10 +7,7 @@ import Mypage from './pages/Mypage'
 import Home from './pages/Home'
 import Writing from './pages/Writingpage'
 import './pages/Home.css'
-import axios from 'axios'
-// react-router-dom 구현
-
-const URL = 'http://localhost:3000'
+import server from './apis/server'
 
 function App() {
   const [ isLogin, setIsLogin ] = useState(false);
@@ -26,7 +23,7 @@ function App() {
   const handleResponseSuccess = async (token) => {
     setAccessToken({ Authorization: `Bearer ${token}`})
     setIsLogin(true)
-    await axios.get(`${URL}/api/user`, { 
+    await server.get(`/user`, { 
       headers: accessToken  // 객체형태의 토큰
     })
     .then(({ data }) => {  // userinfo
