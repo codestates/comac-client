@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import PostingAndCommentList from './PostingAndCommentList'
-import axios from 'axios'
+import server from '../apis/server'
 import './Post.css'
 
 const Post = ({postData, accessToken}) => {
@@ -19,7 +19,7 @@ const Post = ({postData, accessToken}) => {
   
   useEffect(()=>{
     //댓글목록 불러오기 
-    axios.get(`http://localhost:3000/comment/${id}`)
+    server.get(`/comment/${id}`)
     .then(data=>SetCommentList(data))
   },[])
 
@@ -40,9 +40,9 @@ const Post = ({postData, accessToken}) => {
           </div>
 
           <div className="post__btn-icon">
-            <i class="far fa-thumbs-up"/>
+            <i className="far fa-thumbs-up"/>
             <div onClick={()=>OpenModal()}>댓글</div>
-            <i class="far fa-share-square"/>
+            <i className="far fa-share-square"/>
           </div>
         </div>
     )

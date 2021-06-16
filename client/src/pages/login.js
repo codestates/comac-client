@@ -41,7 +41,7 @@ const Login = ({ handleResponseSuccess }) => {
       return setErrMsg('Check your ID or PW')
     }else {
       const { username, password } = userInfo
-      return await server.post(`/api/login`, {
+      return await server.post(`/login`, {
         username,
         password
       })

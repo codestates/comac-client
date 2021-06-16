@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom' 
-import axios from 'axios'
-
-const URL = 'http://localhost:3000'
+import server from '../apis/server'
 
 const Signup = () => {
   const [userInfo, setUserInfo] = useState({
@@ -34,7 +32,7 @@ const Signup = () => {
     } else if(password !== checkPw) {
       return setErrMsg('패스워드를 확인하세요.')
     } else {
-      await axios.post(`${URL}/api/signup`, {
+      await server.post(`/signup`, {
         username,
         password,
         name,
