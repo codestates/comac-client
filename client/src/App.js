@@ -11,14 +11,10 @@ import server from './apis/server'
 
 function App() {
   const [ isLogin, setIsLogin ] = useState(false);
-  const [ userInfo, setUserInfo ] = useState(JSON.parse(localStorage.getItem('userInfo')));
-  const [ accessToken, setAccessToken] = useState(JSON.parse(localStorage.getItem('accessToken')));
+  const [ userInfo ] = useState(JSON.parse(localStorage.getItem('userInfo')));
+  const [ accessToken, setAccessToken ] = useState(JSON.parse(localStorage.getItem('accessToken')));
 
-  useEffect(() => {
-    if(accessToken) setIsLogin(true)
-    else setIsLogin(false);
-  },[accessToken])
-
+  
   const handleResponseSuccess = async (token) => {
     if(token) {
       await server.get(`/user`, { 
@@ -30,9 +26,15 @@ function App() {
         localStorage.setItem('accessToken', JSON.stringify({ Authorization: `Bearer ${token}` }))
         localStorage.setItem('userInfo', JSON.stringify({ id, username, generation, img, createdAt }))
       })
+      window.location.reload();
     }
-  }
 
+  }
+  
+  useEffect(() => {
+    if(accessToken) setIsLogin(true)
+    else setIsLogin(false);
+  },[accessToken])
   return (
     <Router>
     <Switch>
