@@ -17,6 +17,7 @@ const Post = ({postData, accessToken}) => {
   const [CommentList, SetCommentList] = useState(null)
   //댓글목록 state
   
+  const {id, username, generation, createdAt, content} = postData
   useEffect(()=>{
     //댓글목록 불러오기 
     server.get(`/comment/${id}`)
@@ -26,7 +27,6 @@ const Post = ({postData, accessToken}) => {
     .catch((err) => { return })
   },[])
 
-  const {id, username, generation, createdAt, content} = postData
   return (
     
         <div className="post__body">
