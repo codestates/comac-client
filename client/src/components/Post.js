@@ -20,7 +20,10 @@ const Post = ({postData, accessToken}) => {
   useEffect(()=>{
     //댓글목록 불러오기 
     server.get(`/comment/${id}`)
-    .then(data=>SetCommentList(data))
+    .then(data=>{
+      if(data) return SetCommentList(data)
+    })
+    .catch((err) => { return })
   },[])
 
   const {id, username, generation, createdAt, content} = postData
