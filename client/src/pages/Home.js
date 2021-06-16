@@ -4,7 +4,7 @@ import Nav from '../components/Nav'
 import Post from '../components/Post'
 import axios from 'axios'
 import './Home.css'
-import axios from 'axios'
+import server from '../apis/server'
 
 const URL = 'http://localhost:3000'
 
@@ -22,7 +22,7 @@ const Home = ({userInfo, accessToken}) => {
 
   useEffect(()=>{
     //리스트 업데이트마다 리렌더 
-      axios.get('http://localhost:3000/post')
+     server.get('/post')
       .then(data=>SetPostList(data))
   },[])
 
