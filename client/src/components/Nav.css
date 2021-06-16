@@ -37,7 +37,8 @@
 .nav-bar__page-name{
     /* margin-right: 50px; */
     font-size: 3rem;
-    padding-right: 72px;
+    padding-left: 220px;
+   
 }
 
 .nav-bar__links > div{

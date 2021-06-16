@@ -43,8 +43,17 @@ a {
 
 .user-info__profile{
     padding: 5%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
 }
 
+.user-info__profile > img {
+    height: 90%;
+    width : 30%;
+    border-radius: 60px;
+    
+}
 
 .user-info__links{
     border-top: 1px solid var(--line-color);
@@ -52,19 +61,21 @@ a {
     display: flex;
     justify-content: center;
     width: 100%;
+    height: 15%;
 }
-
 
 .user-info__links > div{
     border: 1px solid var(--line-color);
+    width: 15%;
     border-radius: 50%;
-    padding: 4% 4%;
+    padding: 5% 4%;
     margin: 5px 20px;
     color: var(--line-color);
+    text-align: center;
+    cursor: pointer;
+    
     /* 링크 이미지 */
 }
-
-
 
 .user-info__info-box{
     display: flex;
@@ -72,7 +83,7 @@ a {
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 80%;
+    height: 60%;
 }
 
 .user-info__info-box > div{

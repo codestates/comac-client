@@ -13,11 +13,11 @@ const Writingpage = ( { accessToken }) => {
   }
 
   const handleButtonWrite = async () => {
+    console.log(accessToken, content)
     content.length === 0 ? setErrMsg('내용을 입력해주세요.') 
     : await server.post('/post', {
-      headers: accessToken,
       content,
-    })
+    }, {headers: accessToken})
     .then(() => {
       // home 으로 연결
       console.log('click')
