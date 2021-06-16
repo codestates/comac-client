@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import Nav from '../components/Nav'
 import Post from '../components/Post'
 import server from '../apis/server'
@@ -16,15 +16,13 @@ const Home = ({userInfo, accessToken}) => {
   const [PostList, SetPostList] = useState(null)
   //게시물 리스트 state
   // console.log('토큰',accessToken)
-
+  
   useEffect(()=>{
     //리스트 업데이트마다 리렌더 
-      server.get('/post')
-      .then(data=>SetPostList(data))
+    server.get('/post')
+    .then(data=>SetPostList(data))
   },[])
-
-
-    console.log(PostList)
+    // console.log(PostList)
     return (
       <div className="home__body">
         <Nav name={'HOME'}/>

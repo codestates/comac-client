@@ -68,12 +68,12 @@ const Login = ({ handleResponseSuccess }) => {
         <div className="login__box">
           <span>LOG IN</span>
           <div className="login__id-pw">
-            <input id="id" name="id" type="text" autoComplete="off"
+            <input id="id" name="id" type="text" autoComplete="off" required
               onChange={handleInputValue('username')} />
             <label for="id">ID</label>  
           </div>
           <div className="login__id-pw">
-            <input id="pw" name="pw" type="password" autoComplete="off"
+            <input id="pw" name="pw" type="password" autoComplete="off" required
               onChange={handleInputValue('password')} />
             <label for="pw">Password</label>
           </div>
