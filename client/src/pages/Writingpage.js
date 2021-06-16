@@ -5,7 +5,7 @@ import server from '../apis/server'
 
 const Writingpage = ( { accessToken }) => {
   const [ content, setContent ] = useState("")
-  const [ errMsg, setErrMsg] = useState("")
+  const [ errMsg, setErrMsg ] = useState("")
 
   const contentText = (e) => {
     const value = e.target.value
