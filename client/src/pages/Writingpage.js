@@ -1,6 +1,6 @@
 import './Writingpage.css'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import server from '../apis/server'
 
 const Writingpage = ( { accessToken }) => {
@@ -13,16 +13,13 @@ const Writingpage = ( { accessToken }) => {
   }
 
   const handleButtonWrite = async () => {
-    console.log(accessToken, content)
-    content.length === 0 ? setErrMsg('내용을 입력해주세요.') 
-    : await server.post('/post', {
-      content,
-    }, {headers: accessToken})
-    .then(() => {
-      // home 으로 연결
-      console.log('click')
-      console.log(accessToken)
-    })    
+    if(content.length === 0) {
+      return setErrMsg('내용을 입력해주세요.') 
+    } else {
+      return await server.post('/post', {
+        content,
+      }, {headers: accessToken})
+    }
   }
 
   return (
