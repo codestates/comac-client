@@ -11,6 +11,16 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+#checked:visited {
+    text-decoration: none;
+    color: black;
+}
+
+#checked:link {
+    text-decoration: none;
+    color: black;
+}
+
 a { 
     text-decoration:none
 }
@@ -18,10 +28,17 @@ a {
 .mypage__body{
     display: flex;
     flex-direction: column;
-    background: url(../images/image3.jpg) no-repeat center;
+    background: url(../images/image10.jpg) no-repeat center;
     background-size: cover;
     height: 100vh;
 }
+
+.mypage__body::before {
+    content:"";
+    position: absolute; z-index: 1;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: rgba(0, 0, 0, .4);  
+  }
 
 .user-info{
     display: flex;
@@ -33,8 +50,9 @@ a {
     margin-top: 32px;
     margin-bottom: 10px;
     border-radius: 65px;
-    background: #e0e0e0;
-    box-shadow:  10px 10px 30px #5a5a5a, -10px -10px 30px #ffffff;
+    background: #fff;
+    box-shadow:  10px 10px 30px #5a5a5a, -5px -5px 15px #ffffff;
+    z-index:2;
 }
 
 .fa-user{
@@ -69,13 +87,22 @@ a {
     border: 1px solid var(--line-color);
     width: 15%;
     border-radius: 50%;
-    padding: 5% 4%;
+    padding: 5% 8%;
     margin: 5px 20px;
     color: var(--line-color);
     text-align: center;
     cursor: pointer;
-    
+    font-size: 0.5rem;
     /* 링크 이미지 */
+    display:flex;
+    justify-content: center;
+}
+
+.user-info__links a {
+    display: inline-block;
+    /* text-align: center; */
+    padding-top: 4px;
+    
 }
 
 .user-info__info-box{
@@ -107,12 +134,18 @@ a {
     padding: 2% 24%;
 }
 
+<<<<<<< HEAD
 .user-info__button > button{ 
+=======
+
+.user-info__button > div { 
+>>>>>>> 15a7409fe3a12c5d984688cdfd7251789627bcdb
     /*버튼*/
     border: 1px solid black;
     border-radius: 5px;
     padding: 5% 10%;
     /*버튼*/
+    text-decoration: none;
 }
 
 .user-info__button > div:hover{
@@ -180,7 +213,7 @@ a {
     }
 
     .user-info__button{
-        padding: 2% 14%
+        padding: 2% 14%;
     }
 
     .user-info__button > div{ 
@@ -191,6 +224,8 @@ a {
         width: 40%;
         height: 50%;
         text-align: center;
+        text-decoration: none; 
+        color: black;
         /*버튼*/
     }
 }

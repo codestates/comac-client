@@ -1,8 +1,13 @@
 import React from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory} from 'react-router-dom'
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 15a7409fe3a12c5d984688cdfd7251789627bcdb
 const Mypage = ({userInfo, accessToken, handleLogout}) => {
   const history = useHistory();
 
@@ -24,9 +29,9 @@ const Mypage = ({userInfo, accessToken, handleLogout}) => {
           </div>
 
           <div className="user-info__links">
-            <div title="codestates"><a href="https://codestates.com">Link</a></div>
-            <div title="github"><a href="https://github.com">Link</a></div>
-            <div title="urclass"><a href="https://urclass.codestates.com/">Link</a></div>
+            <div title="codestates"><a href="https://codestates.com">CODESTATES</a></div>
+            <div title="github"><a href="https://github.com">GITHUB</a></div>
+            <div title="urclass"><a href="https://urclass.codestates.com/">URCLASS</a></div>
           </div>
 
           <div className="user-info__info-box">
@@ -36,7 +41,13 @@ const Mypage = ({userInfo, accessToken, handleLogout}) => {
           </div>
 
           <div className="user-info__button">
+<<<<<<< HEAD
             <button onClick={() => history.push('/home')}>확인</button>
+=======
+
+            <button onClick={() => history.push('/home')}>확인</button>
+            
+>>>>>>> 15a7409fe3a12c5d984688cdfd7251789627bcdb
           </div>
 
         </div>

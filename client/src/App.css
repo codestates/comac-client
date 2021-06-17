@@ -141,11 +141,12 @@
   text-decoration: none;
 }
   
-.login__social-login-button img {
-  font-size: 1.3rem;
+.login__social-login-button button {
+  font-size: 1.4rem;
   outline: none;
   cursor: pointer;
   color: var(--accent-color);
+  border-radius: 50px;
   /* background: url(./images/image6.png); */
   
 }
@@ -169,6 +170,13 @@
   align-items: center;
 }
 
+.signup__body::before {
+  content:"";
+  position: absolute; z-index: 1;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: rgba(0, 0, 0, .4);  
+}
+
 .signup__body-child {
   height: 80%;
   width: 40%;
@@ -180,6 +188,7 @@
   border-radius: 65px;
   background: #e0e0e0;
   box-shadow:  10px 10px 30px #5a5a5a, -10px -10px 30px #ffffff;
+  z-index: 1;
 }
 .signup__sign-text {
   color: #7b9acc;
@@ -187,6 +196,11 @@
 }
 
 .signup__user-info {
+  width: 55%;
+}
+
+.signup__user-info:hover {
+  border: 1px solid #e0e0e0;
   width: 55%;
 }
 
@@ -199,6 +213,13 @@
 
 .signup__button {
   cursor: pointer;
+  border-radius: 15px;
+  width: 40px;
+}
+
+.signup__button:hover {
+  background: #5a5a5a;
+  color: #fff;
 }
 
 #login-link {
