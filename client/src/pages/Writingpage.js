@@ -1,11 +1,12 @@
 import './Writingpage.css'
 import React, { useState } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Redirect, useHistory } from 'react-router-dom'
 import server from '../apis/server'
 
 const Writingpage = ( { accessToken }) => {
   const [ content, setContent ] = useState("")
   const [ errMsg, setErrMsg ] = useState("")
+  let history = useHistory();
 
   const contentText = (e) => {
     const value = e.target.value
@@ -14,11 +15,15 @@ const Writingpage = ( { accessToken }) => {
 
   const handleButtonWrite = async () => {
     if(content.length === 0) {
-      return setErrMsg('내용을 입력해주세요.') 
+      setErrMsg('내용을 입력해주세요.') 
     } else {
-      return await server.post('/post', {
+      await server.post('/post', {
         content,
       }, {headers: accessToken})
+      .then(() => {
+        history.push("/home");
+        // redirect 로는 작동이 되지를 않아, history를 사용했습니다 !
+      })
     }
   }
 

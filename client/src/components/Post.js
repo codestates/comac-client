@@ -28,6 +28,7 @@ const Post = ({postData, accessToken}) => {
     .catch((err) => { return })
   },[])
 
+
   const [Like, setLike ] = useState(false)
 
   const likeAndUnlike = async() =>{
@@ -43,10 +44,13 @@ const Post = ({postData, accessToken}) => {
       .then(()=> setLike(false))
     }
 
+
   return (
-    
+        
         <div className="post__body">
+
           {isOpen ? (<div ><PostingAndCommentList postId={id}/*댓글목록 불러올 게시물아이디*/ CommentList={CommentList} CloseModal={CloseModal} OpenModal={OpenModal} accessToken={accessToken} /></div>) : null}
+
           <div className  ="post__user-info">
             <div><img src={img} className="fas fa-user"/></div>
             <div>{username}</div>

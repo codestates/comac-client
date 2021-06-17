@@ -7,7 +7,7 @@ import './Home.css'
 
 // const URL = 'http://localhost:3000'
 
-const Home = ({userInfo, accessToken}) => {
+const Home = ({userInfo, accessToken, handleLogout}) => {
 
   // const history = useHistory();
   // if(!accessToken){  
@@ -26,7 +26,7 @@ const Home = ({userInfo, accessToken}) => {
     // console.log(PostList)
     return (
       <div className="home__body">
-        <Nav name={'HOME'}/>
+        <Nav name={'HOME'} handleLogout={handleLogout}/>
         <div className="post-list">
           {PostList ? PostList.data.data.map((postData,index) => {
             return <Post key={index} postData={postData} accessToken={accessToken}/>
