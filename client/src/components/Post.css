@@ -7,7 +7,7 @@
 
 .post__body{
     border: 2px solid #fff(0, 0, 0);
-    box-shadow: 10px 10px 30px #5a5a5a, -10px -10px 30px #ffffff;
+    box-shadow: 10px 10px 30px #5a5a5a, -3px -3px 15px #ffffff;
     background-color: rgba(255, 255, 255, 0.79);
     border-radius: 10px;
     display: flex;
@@ -29,6 +29,11 @@
     padding: 2%;
 }
 
+.post__user-info img {
+    border: 2px solid skyblue;
+    border-radius: 30px;
+}
+
 .post__user-info div:nth-child(2){
     /* 이름 */
     font-size: 1.2rem;
@@ -43,8 +48,6 @@
     color: #d49466;
     /* margin-right: 10%; */
 }
-
-
 
 .post__content{
     padding: 2%;
@@ -63,8 +66,7 @@
 .post__btn-icon div,
 .post__btn-icon i
 {   
-   padding: 8px 12px; 
-    
+   padding: 8px 12px;     
 }
 
 .post__btn-icon div:hover{
