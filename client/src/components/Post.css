@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.post__body{
+    border: 2px solid #fff(0, 0, 0);
+    box-shadow: 10px 10px 30px #5a5a5a, -3px -3px 15px #ffffff;
+    background-color: rgba(255, 255, 255, 0.79);
+    border-radius: 10px;
+    display: flex;
+    padding: 0.5% 3%;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50vw;
+    height: 30vh;
+    margin: 1%;
+}
+
+.post__user-info{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: flex-end; */
+}
+
+.post__user-info div{
+    padding: 2%;
+}
+
+.post__user-info img {
+    border: 2px solid skyblue;
+    border-radius: 30px;
+}
+
+.post__user-info div:nth-child(2){
+    /* 이름 */
+    font-size: 1.2rem;
+    margin-right: 180px;
+}
+
+
+.post__user-info div:nth-child(3){
+    /* 기수정보 박스 */
+    font-size: 1.2rem;
+    color: #d49466;
+    /* margin-right: 10%; */
+}
+
+.post__content{
+    padding: 2%;
+    height: 8vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.post__btn-icon{ 
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.post__btn-icon div,
+.post__btn-icon i
+{   
+   padding: 8px 12px;     
+}
+
+.post__btn-icon div:hover{
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.post__btn-icon i:hover{
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+
+.post__btn-icon i:nth-child(2){
+    margin-right: 40%;
+}
+
+.like{
+    font-weight: bold;
+}
+
+
+.unlike{    
+    font-weight: normal;
+}
+
+.fa-user{
+    width: 5vw;
+    height: auto;
+}
+
+.hi{
+    position: fixed;
+}
+
+
+@media screen and (max-width: 999px){
+
+    .post__user-info div:nth-child(1),
+    .post__user-info div:nth-child(3),
+    .post__user-info div:nth-child(4){
+        display: none;
+    }
+
+    .post__user-info{
+        flex-direction: column;
+        align-items: flex-start;
+        /* margin-right: auto; */
+    }
+    .post__user-info div:nth-child(2){
+        padding: 10px; 
+        text-align: center;
+    }
+
+    .post__user-info i:nth-child(2){
+        padding: 10px; 
+        text-align: center;
+    }
+
+    .post__content{
+        height: 50%;
+    }
+
+    .post__btn-icon i{
+        display: none;
+    }
+
+
+}

@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.overlay-modal{
+    /* 모달 뒤에 어둡, 투명한 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.495);
+    z-index: 99; 
+}
+
+
+.PostingAndCommentList__body{
+    /* modal*/
+    display: block;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 1%;
+    width: 40vw;
+    height: auto;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    z-index: 100;
+    box-shadow:  10px 10px 30px #5a5a5a, -18px -18px 30px #ffffff;
+    overflow: auto;
+    
+}
+
+
+.PostingAndCommentList__comment-list{
+    overflow: scroll;
+    width: auto;
+    height: 50vh;
+}
+
+
+.PostingAndCommentList__form-box > textarea{
+    border: 1px solid #777;
+    width: 100vw;
+    height: auto;
+    outline: none;
+    resize: none;
+    border-radius: 5px;
+    padding: 2%;
+}
+
+.PostingAndCommentList__form-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+}
+
+.PostingAndCommentList__form-box > textarea{
+    width: 90vw;
+    height: 6vh;
+    margin-right: 4vw;
+}
+
+.PostingAndCommentList__form-box > div
+{
+    /* 댓글작성 버튼 */
+    border: 1px solid black;
+    display: flex;
+    width: 50vw;
+    height: 6vh;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    
+}
+
+.PostingAndCommentList__form-box > div:hover{
+    cursor: pointer;
+    background-color: rgb(244, 243, 240);
+}
+
+.nothing{
+    display: flex;
+    border-radius: 10px;
+    margin: 2% 0%;
+    padding: 2%;
+    width: auto;
+    height: 40vh;
+}
+
+@media screen and (max-width: 768px){
+
+    .PostingAndCommentList__comment-list{
+        /* 모달 댓글창 하나 뺴고 나머지 스크롤화 */
+        margin: 2% 0%;
+        padding: 2%;
+        width: auto;
+        height: 15vh;
+        overflow: scroll;
+    }
+
+
+}

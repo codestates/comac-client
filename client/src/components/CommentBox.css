@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.commentBox__body{
+    display:flex;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 2% 0%;
+    padding: 2%;
+    width: auto;
+    height: 15vh;
+    overflow: hidden;
+    
+}
+
+.commentBox__profile{
+    align-self: center;
+    padding: 1%;
+    
+}
+
+.commentBox__profile img{
+    width: 5vw;
+    border-radius: 5px;
+}
+
+
+.commentBox__contents{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    padding: 0% 5%;
+    overflow: scroll;
+}
+
+.commentBox__contents__user-info{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3%;
+}
+
+.commentBox__contents__user-info > div:nth-child(1) {
+    color: #d49466;
+}
+
+.commentBox__contents__user-info > div:nth-child(2){
+    /*기수정보*/ 
+    padding-right: 20%;
+}
+.commentBox__contents__user-info > div:nth-child(1),
+.commentBox__contents__user-info > div:nth-child(2){
+    /* 1 이름 , 2 기수정보*/
+    font-size: large;
+    font-weight: bold;
+}
+
+.commentBox__contents__user-info > i{
+    /* 좋아요 버튼 */
+    cursor: pointer;
+}  
+
+.commentBox__contents__user-info > i:hover{
+    /* 좋아요 버튼 */
+    font-weight: bold;
+}  
+
+
+.commentBox__contents__comment{
+    /* 댓글내용 */
+    border: 1px solid #777;
+    /* border-radius: 10px; */
+    padding-bottom: 5%;
+    height: 10vh;
+    text-align: start;
+    overflow: auto;
+}
+
+.commentBox__contents__comment::-webkit-scrollbar {
+    width: 10px;
+}
+
+.commentBox__contents__comment::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.commentBox__contents__comment::-webkit-scrollbar-track {
+    background-color: grey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+.commentUnLike{
+    font-weight: normal;
+}
+.commentLike{
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 768px){
+
+    .commentBox__profile,
+    .commentBox__contents__user-info > div:nth-child(2),
+    .commentBox__contents__user-info > div:nth-child(3){
+        /* 프사, 기수정보, 게시날짜 없애기*/
+        display: none;
+    }
+
+
+}
