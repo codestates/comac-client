@@ -85,7 +85,7 @@ const Login = ({ handleResponseSuccess }) => {
             <GoogleLogin
               clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
               render={renderProps => (
-                <button className="fab fa-google" onClick={renderProps.onClick} disabled={renderProps.disabled}>GoogleLogin</button>
+                <button className="fab fa-google" onClick={renderProps.onClick} disabled={renderProps.disabled}></button>
               )}
               onSuccess={handleGoogleLogin}
               onFailure={handleGoogleLogin}
