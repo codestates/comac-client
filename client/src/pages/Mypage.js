@@ -1,18 +1,18 @@
 import React from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
-// import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
-const Mypage = ({userInfo}) => {
+const Mypage = ({userInfo, accessToken}) => {
 
-  // const history = useHistory();
+  if(!accessToken){  
+    //유효성검사
+    window.location.replace('/')
+  }
 
-  // if(Object.keys(userInfo).length === 0){
-  //   history.push('/')
-  // }
   const {username, name, generation, img } = userInfo
-  
   return (
+    
       <div className="mypage__body">
         <Nav name={'MYPAGE'}/>
         <div className="user-info">
