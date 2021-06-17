@@ -1,9 +1,7 @@
 import React from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
-import { Link, useHistory} from 'react-router-dom'
-
-
+import {useHistory} from 'react-router-dom'
 
 const Mypage = ({userInfo, accessToken, handleLogout}) => {
   const history = useHistory();
@@ -23,6 +21,7 @@ const Mypage = ({userInfo, accessToken, handleLogout}) => {
           <div className="user-info__profile">
             {img.slice(0,11) === "https://lh3" ? <img className="user-info__social-img" src={img} />
             : <img id="user-info__img" src={img}/>}     
+
           </div>
 
           <div className="user-info__links">

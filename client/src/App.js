@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect, } from 'react-router-dom'
 import Login from './pages/login'   
 import Signup from './pages/Signup'
 import Mypage from './pages/Mypage'
@@ -12,8 +12,7 @@ import server from './apis/server'
 function App() {
   const [ isLogin, setIsLogin ] = useState(false);
   const [ userInfo ] = useState(JSON.parse(localStorage.getItem('userInfo')));
-  const [ accessToken, setAccessToken ] = useState(JSON.parse(localStorage.getItem('accessToken')));
-  let history = useHistory();
+  const [ accessToken ] = useState(JSON.parse(localStorage.getItem('accessToken')));
 
   
   const handleResponseSuccess = async (token) => {

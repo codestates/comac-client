@@ -1,6 +1,6 @@
 import './Writingpage.css'
 import React, { useState } from 'react'
-import { Link, Redirect, useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import server from '../apis/server'
 
 const Writingpage = ( { accessToken }) => {
@@ -8,7 +8,7 @@ const Writingpage = ( { accessToken }) => {
   const [ errMsg, setErrMsg ] = useState("")
   let history = useHistory();
 
-  if(!accessToken){  
+  if(!accessToken){
     //유효성검사
     window.location.replace('/')
   }
@@ -20,7 +20,7 @@ const Writingpage = ( { accessToken }) => {
 
   const handleButtonWrite = async () => {
     if(content.length === 0) {
-      setErrMsg('내용을 입력해주세요.') 
+      setErrMsg('내용을 입력해주세요.')
     } else {
       await server.post('/post', {
         content,
@@ -36,7 +36,7 @@ const Writingpage = ( { accessToken }) => {
     <div className="writing__body">
       <div className="writing__nav">
         <Link id="home" to="/home"> HOME </Link>
-        <div>WRITING PAGE</div> 
+        <div>WRITING PAGE</div>
       </div>
       <div className="writing__text-box">
         <textarea onChange={contentText} value={content} />
