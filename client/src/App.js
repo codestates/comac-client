@@ -32,18 +32,21 @@ function App() {
   }
 
   const handleLogout = () => {
-    localStorage.removeItem('accessToken')
-    localStorage.removeItem('userInfo')
-    setAccessToken("")
-    localStorage.clear();
-    console.log(isLogin)
-    console.log(accessToken)
+    // localStorage.removeItem('accessToken')
+    // localStorage.removeItem('userInfo')
+    setAccessToken(null)
+    localStorage.clear()
+    // console.log(isLogin)
+    // console.log(accessToken)
+    server.post('/logout', {
+      headers: accessToken,
+    })
     // return <Redirect to='/' />
     // history.push('/')
   }
   
   useEffect(() => {
-    console.log('wow!')
+    // console.log('wow!')
     if(accessToken) setIsLogin(true)
     else setIsLogin(false);
   },[accessToken])
