@@ -3,7 +3,7 @@ import CommentBox from './CommentBox'
 import './PostingAndCommentList.css'
 import server from '../apis/server'
 //모달 닫을수있게 Close={Close}
-const PostingAndCommentList = ({CommentList, CloseModal, postId, accessToken}) =>{
+const PostingAndCommentList = ({CommentList, CloseModal, postId, accessToken, OpenModal}) =>{
   const [comment, setComment] = useState("")
   //댓글작성 state
 
@@ -17,8 +17,8 @@ const PostingAndCommentList = ({CommentList, CloseModal, postId, accessToken}) =
   }
 
     return (
-      <div className="overlay-modal">
-        <div className="PostingAndCommentList__body">
+      <div className="overlay-modal" onClick={CloseModal}>
+        <div className="PostingAndCommentList__body" onClick={(e) => e.stopPropagation()}>
           <div className="PostingAndCommentList__comment-list">
 
             {CommentList.data.data && CommentList.data.data.map((commentData,index)=> <CommentBox key={index} commentData={commentData}/>)}
