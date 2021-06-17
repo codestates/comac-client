@@ -3,7 +3,8 @@ import './Mypage.css'
 import Nav from '../components/Nav'
 import { useHistory } from 'react-router-dom'
 
-const Mypage = ({userInfo, accessToken}) => {
+const Mypage = ({userInfo, accessToken, handleLogout}) => {
+  const history = useHistory();
 
   if(!accessToken){  
     //유효성검사
@@ -14,7 +15,7 @@ const Mypage = ({userInfo, accessToken}) => {
   return (
     
       <div className="mypage__body">
-        <Nav name={'MYPAGE'}/>
+        <Nav name={'MYPAGE'} handleLogout={handleLogout} />
         <div className="user-info">
 
           <div className="user-info__profile">
@@ -35,8 +36,7 @@ const Mypage = ({userInfo, accessToken}) => {
           </div>
 
           <div className="user-info__button">
-            <div>확인</div>
-            <div>수정</div>
+            <button onClick={() => history.push('/home')}>확인</button>
           </div>
 
         </div>

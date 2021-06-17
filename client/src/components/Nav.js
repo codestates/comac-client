@@ -12,10 +12,9 @@ const Nav = ({ name, handleLogout }) => {
 
           <div className="nav-bar__page-name">{name}</div>
 
-          <div>
-            <div className="nav-bar__post-btn logout" onClick={ () => localStorage.clear() } >LOGOUT</div>
-            <div className="nav-bar__post-btn"><Link id="writing-link" to="/writing">WRITE</Link></div>
-          </div>
+
+          <div className="nav-bar__post-btn" onClick={ () => handleLogout() } >LOGOUT</div>
+          <div className="nav-bar__post-btn"><Link id="writing-link" to="/writing">WRITE</Link></div>
 
 
         </nav>
