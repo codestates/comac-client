@@ -18,7 +18,7 @@ const Post = ({postData, accessToken}) => {
   const [CommentList, SetCommentList] = useState(null)
   //댓글목록 state
   
-  const {id, username, generation, createdAt, content, img} = postData
+  const {id, username, generation, createdAt, content, post_likes , img} = postData
   useEffect(()=>{
     //댓글목록 불러오기
     server.get(`/comment/${id}`)
@@ -29,22 +29,34 @@ const Post = ({postData, accessToken}) => {
   },[id])
   
   
-
-  const [Like, setLike ] = useState(false)
-
+  const [Like, setLike ] = useState(() => {
+    server.post(`/post/${id}/islike`, null, {
+      headers: accessToken
+    })
+    .then((res) => {
+      if(res.data.data) {
+        setLike(true)
+      } else {
+        setLike(false)
+      }
+    })
+  })
+  // useEffect(() => {
+  //   window.location.reload()
+  // },[Like])
+  
   const likeAndUnlike = async() =>{
     // 1. like unlike 
     // 2. state로 관리
     if(!Like){
       await server.post(`/post/${id}/like`, {},{headers: accessToken})
       .then(()=>setLike(true))
-      return
+    } else {
+      await server.post(`/post/${id}/unlike`, {}, {headers: accessToken})
+        .then(()=> setLike(false))
     }
-
-    await server.post(`/post/${id}/unlike`, {}, {headers: accessToken})
-      .then(()=> setLike(false))
-    }
-
+    window.location.reload()
+  }
 
   return (
         
@@ -63,7 +75,10 @@ const Post = ({postData, accessToken}) => {
             {content}
           </div>
           <div className="post__btn-icon">
+            <div>
+            {post_likes}
             {Like ? (<i className="far fa-thumbs-up like" onClick={likeAndUnlike}/>) : (<i className="far fa-thumbs-up unlike" onClick={likeAndUnlike}/>)}
+            </div>
             <div onClick={()=>OpenModal()}>댓글</div>
             <i className="far fa-share-square"/>
           </div>
