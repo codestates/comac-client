@@ -27,17 +27,19 @@
     padding: 1%;
     width: 40vw;
     height: auto;
-    position: fixed;
+    position: absolute;
     background-color: rgb(255, 255, 255);
     z-index: 100;
     box-shadow:  10px 10px 30px #5a5a5a, -18px -18px 30px #ffffff;
-    overflow: scroll;
+    overflow: auto;
     
 }
 
 
 .PostingAndCommentList__comment-list{
-    overflow: auto;
+    overflow: scroll;
+    width: auto;
+    height: 50vh;
 }
 
 
