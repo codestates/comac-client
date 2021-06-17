@@ -83,6 +83,7 @@ a {
 }
 
 .user-info__links > div{
+
     border: 1px solid var(--line-color);
     width: 15%;
     border-radius: 50%;
@@ -132,6 +133,7 @@ a {
     align-items: center;
     padding: 2% 24%;
 }
+
 
 .user-info__button > div { 
     /*버튼*/

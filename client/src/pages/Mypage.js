@@ -1,21 +1,23 @@
 import React from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
-import { Link } from 'react-router-dom'
-// import { useHistory } from 'react-router-dom'
+import { Link, useHistory} from 'react-router-dom'
 
-const Mypage = ({userInfo}) => {
 
-  // const history = useHistory();
 
-  // if(Object.keys(userInfo).length === 0){
-  //   history.push('/')
-  // }
+const Mypage = ({userInfo, accessToken, handleLogout}) => {
+  const history = useHistory();
+
+  if(!accessToken){  
+    //유효성검사
+    window.location.replace('/')
+  }
+
   const {username, name, generation, img } = userInfo
-  
   return (
+    
       <div className="mypage__body">
-        <Nav name={'MYPAGE'}/>
+        <Nav name={'MYPAGE'} handleLogout={handleLogout} />
         <div className="user-info">
 
           <div className="user-info__profile">
@@ -36,8 +38,9 @@ const Mypage = ({userInfo}) => {
           </div>
 
           <div className="user-info__button">
-            <div><Link id="checked" to="/home">확인</Link></div>
-            <div>수정</div>
+
+            <button onClick={() => history.push('/home')}>확인</button>
+            
           </div>
 
         </div>

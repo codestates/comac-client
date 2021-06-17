@@ -98,7 +98,9 @@
     height: auto;
 }
 
-
+.hi{
+    position: fixed;
+}
 
 
 @media screen and (max-width: 999px){
