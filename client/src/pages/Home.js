@@ -10,10 +10,11 @@ import './Home.css'
 const Home = ({userInfo, accessToken, handleLogout}) => {
 
   // const history = useHistory();
-  // if(!accessToken){  
-  //   //유효성검사
-  //   history.push('/')
-  // }
+  if(!accessToken){  
+    //유효성검사
+    window.location.replace('/')
+  }
+  
   const [PostList, SetPostList] = useState(null)
   //게시물 리스트 state
   // console.log('토큰',accessToken)
