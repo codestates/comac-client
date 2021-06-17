@@ -11,11 +11,11 @@ const PostingAndCommentList = ({CommentList, CloseModal, postId, accessToken, Op
   //댓글작성 state
   const handleCommentClick = async () => {
     //서버로 댓글작성 요청 후 모달 닫기
-    if(comment.length === 0){
-      return await server.post(`/comment/${postId}`,{content: comment},{headers: accessToken})
+    if(comment.length !== 0){
+      await server.post(`/comment/${postId}`,{content: comment},{headers: accessToken})
     }
     /*보낼데이터(onchange입력값)*/
-    // window.location.reload()
+    window.location.reload()
     //댓글작성 -> 1.요청후 꺼짐 2.
   }
   // 작성하면 업데이트 -> useEffect 발동 ->  openmodal 
