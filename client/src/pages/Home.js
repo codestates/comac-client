@@ -10,7 +10,7 @@ import './Home.css'
 const Home = ({userInfo, accessToken}) => {
 
   // const history = useHistory();
-  // if(!accessToken){
+  // if(!accessToken){  
   //   //유효성검사
   //   history.push('/')
   // }
@@ -30,7 +30,7 @@ const Home = ({userInfo, accessToken}) => {
         <div className="post-list">
           {PostList ? PostList.data.data.map((postData,index) => {
             return <Post key={index} postData={postData} accessToken={accessToken}/>
-          }) : <div className="nothing"> 게시물이 없습니다 </div>
+          }) : <div className="nothing"></div>
 
           }
         </div>

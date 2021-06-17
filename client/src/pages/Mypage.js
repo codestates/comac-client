@@ -1,16 +1,15 @@
 import React from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
 const Mypage = ({userInfo}) => {
 
-  const history = useHistory();
+  // const history = useHistory();
 
   // if(Object.keys(userInfo).length === 0){
   //   history.push('/')
   // }
-
   const {username, name, generation, img } = userInfo
   
   return (

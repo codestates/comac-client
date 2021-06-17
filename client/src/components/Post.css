@@ -67,7 +67,6 @@
     
 }
 
-
 .post__btn-icon div:hover{
   cursor: pointer;
   font-weight: bold;
@@ -83,6 +82,19 @@
     margin-right: 40%;
 }
 
+.like{
+    font-weight: bold;
+}
+
+
+.unlike{    
+    font-weight: normal;
+}
+
+.fa-user{
+    width: 5vw;
+    height: auto;
+}
 
 
 

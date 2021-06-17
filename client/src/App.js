@@ -42,9 +42,11 @@ function App() {
         exact path="/"
         render={() => {
           return (
-            isLogin ? <Redirect to='/home' />
-            : <Login handleResponseSuccess={handleResponseSuccess} />
-          )
+            <div>
+              { isLogin ? <Redirect to='/home' />
+              : <Login handleResponseSuccess={handleResponseSuccess} />}
+            </div>
+            )
         }}/>
       <Route 
         path="/signup"
