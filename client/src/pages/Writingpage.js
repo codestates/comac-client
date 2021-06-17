@@ -8,6 +8,11 @@ const Writingpage = ( { accessToken }) => {
   const [ errMsg, setErrMsg ] = useState("")
   let history = useHistory();
 
+  if(!accessToken){  
+    //유효성검사
+    window.location.replace('/')
+  }
+
   const contentText = (e) => {
     const value = e.target.value
     setContent(value)
