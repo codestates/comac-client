@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react'
+import React,{useState} from 'react'
 import CommentBox from './CommentBox'
 import './PostingAndCommentList.css'
 import server from '../apis/server'
@@ -6,18 +6,20 @@ import {useHistory} from 'react-router-dom'
 //모달 닫을수있게 Close={Close}
 
 const PostingAndCommentList = ({CommentList, CloseModal, postId, accessToken, OpenModal}) =>{
-  const history = useHistory()
+  // const history = useHistory()
   const [comment, setComment] = useState("")
   //댓글작성 state
   const handleCommentClick = async () => {
     //서버로 댓글작성 요청 후 모달 닫기
-    await server.post(`/comment/${postId}`,{content: comment},{headers: accessToken})
+    if(comment.length === 0){
+      return await server.post(`/comment/${postId}`,{content: comment},{headers: accessToken})
+    }
     /*보낼데이터(onchange입력값)*/
-    CloseModal()
-    history.push('/home')
     // window.location.reload()
     //댓글작성 -> 1.요청후 꺼짐 2.
   }
+  // 작성하면 업데이트 -> useEffect 발동 ->  openmodal 
+  
     return (
       <div className="overlay-modal" onClick={CloseModal}>
         <div className="PostingAndCommentList__body" onClick={(e) => e.stopPropagation()}>

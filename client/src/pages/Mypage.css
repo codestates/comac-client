@@ -134,8 +134,7 @@ a {
     padding: 2% 24%;
 }
 
-
-.user-info__button > div { 
+.user-info__button > button{ 
     /*버튼*/
     border: 1px solid black;
     border-radius: 5px;

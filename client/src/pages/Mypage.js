@@ -1,9 +1,7 @@
 import React from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
-import { Link, useHistory} from 'react-router-dom'
-
-
+import {useHistory} from 'react-router-dom'
 
 const Mypage = ({userInfo, accessToken, handleLogout}) => {
   const history = useHistory();
@@ -22,7 +20,7 @@ const Mypage = ({userInfo, accessToken, handleLogout}) => {
 
           <div className="user-info__profile">
             {/* <i className="fas fa-user"></i> */}
-            <img src={img} />
+            <img src={img} alt=""/>
           </div>
 
           <div className="user-info__links">
@@ -38,9 +36,7 @@ const Mypage = ({userInfo, accessToken, handleLogout}) => {
           </div>
 
           <div className="user-info__button">
-
             <button onClick={() => history.push('/home')}>확인</button>
-            
           </div>
 
         </div>
