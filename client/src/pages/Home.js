@@ -26,16 +26,18 @@ const Home = ({userInfo, accessToken, handleLogout}) => {
   },[])
     // console.log(PostList)
     return (
-      <div className="home__body">
-        <Nav name={'HOME'} handleLogout={handleLogout}/>
-        <div className="post-list">
-          {PostList ? PostList.data.data.map((postData,index) => {
-            return <Post key={index} postData={postData} accessToken={accessToken}/>
-          }) : <div className="nothing"></div>
+      <div className="home__root">
+        <div className="home__body">
+          <Nav name={'HOME'} handleLogout={handleLogout}/>
+          <div className="post-list">
+            {PostList ? PostList.data.data.map((postData,index) => {
+              return <Post key={index} postData={postData} accessToken={accessToken}/>
+            }) : <div className="nothing"></div>
 
-          }
+            }
+          </div>
+
         </div>
-
       </div>
     );
 };
