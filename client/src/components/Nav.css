@@ -45,6 +45,7 @@
     padding: 8px 12px;
 }
 
+
 .nav-bar__post-btn{
     display: flex;
     justify-content: center;
@@ -64,6 +65,10 @@
     color: #999;
 }
 
+.nav-bar__post-btn a{ 
+    text-decoration: none;
+}
+
 .nav-bar__toggle{
     position: absolute;
     display: none;
@@ -74,6 +79,9 @@
     text-decoration: none;
 }
 
+#writing-link{
+    color: black;
+}
 
 @media screen and (max-width: 768px) {
     
@@ -93,7 +101,7 @@
         text-align: center;
         width: 100%;
     }
-    
+ 
     .nav-bar__links > div:nth-child(1) {
         padding-right: 16px;
     }

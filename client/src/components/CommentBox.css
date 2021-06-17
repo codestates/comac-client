@@ -6,21 +6,27 @@
 
 
 .commentBox__body{
-    display: flex;
+    display:flex;
     border: 1px solid black;
     border-radius: 10px;
     margin: 2% 0%;
     padding: 2%;
     width: auto;
     height: 15vh;
+    overflow: hidden;
     
 }
 
 .commentBox__profile{
     align-self: center;
     padding: 1%;
+    
 }
 
+.commentBox__profile img{
+    width: 5vw;
+    border-radius: 5px;
+}
 
 
 .commentBox__contents{
@@ -89,6 +95,14 @@
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
 }
+
+.commentUnLike{
+    font-weight: normal;
+}
+.commentLike{
+    font-weight: bold;
+}
+
 
 @media screen and (max-width: 768px){
 
