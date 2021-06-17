@@ -134,12 +134,7 @@ a {
     padding: 2% 24%;
 }
 
-<<<<<<< HEAD
 .user-info__button > button{ 
-=======
-
-.user-info__button > div { 
->>>>>>> 15a7409fe3a12c5d984688cdfd7251789627bcdb
     /*버튼*/
     border: 1px solid black;
     border-radius: 5px;

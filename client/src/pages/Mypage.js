@@ -3,11 +3,6 @@ import './Mypage.css'
 import Nav from '../components/Nav'
 import { Link, useHistory} from 'react-router-dom'
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 15a7409fe3a12c5d984688cdfd7251789627bcdb
 const Mypage = ({userInfo, accessToken, handleLogout}) => {
   const history = useHistory();
 
@@ -41,13 +36,7 @@ const Mypage = ({userInfo, accessToken, handleLogout}) => {
           </div>
 
           <div className="user-info__button">
-<<<<<<< HEAD
             <button onClick={() => history.push('/home')}>확인</button>
-=======
-
-            <button onClick={() => history.push('/home')}>확인</button>
-            
->>>>>>> 15a7409fe3a12c5d984688cdfd7251789627bcdb
           </div>
 
         </div>
