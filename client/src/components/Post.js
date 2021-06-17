@@ -27,10 +27,11 @@ const Post = ({postData, accessToken}) => {
   },[])
 
   const {id, username, generation, createdAt, content} = postData
+
   return (
-    
+        
         <div className="post__body">
-          {isOpen ? (<div ><PostingAndCommentList postId={id}/*댓글목록 불러올 게시물아이디*/ CommentList={CommentList} CloseModal={CloseModal} accessToken={accessToken}/></div>) : null}
+          {isOpen ? (<div ><PostingAndCommentList postId={id}/*댓글목록 불러올 게시물아이디*/ CommentList={CommentList} CloseModal={CloseModal} accessToken={accessToken} OpenModal={OpenModal}/></div>) : null}
           <div className  ="post__user-info">
             <div><i className="fas fa-user"/></div>
             <div>{username}</div>

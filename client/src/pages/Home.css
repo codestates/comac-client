@@ -15,7 +15,7 @@
 
 .post-list{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     align-self: center;
     width: auto;

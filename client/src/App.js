@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from 'react-router-dom'
 import Login from './pages/login'   
 import Signup from './pages/Signup'
 import Mypage from './pages/Mypage'
@@ -13,6 +13,7 @@ function App() {
   const [ isLogin, setIsLogin ] = useState(false);
   const [ userInfo ] = useState(JSON.parse(localStorage.getItem('userInfo')));
   const [ accessToken, setAccessToken ] = useState(JSON.parse(localStorage.getItem('accessToken')));
+  let history = useHistory();
 
   
   const handleResponseSuccess = async (token) => {
@@ -28,18 +29,34 @@ function App() {
       })
       window.location.reload();
     }
+  }
 
+  const handleLogout = () => {
+    // localStorage.removeItem('accessToken')
+    // localStorage.removeItem('userInfo')
+    setAccessToken(null)
+    localStorage.clear()
+    // console.log(isLogin)
+    // console.log(accessToken)
+    server.post('/logout', {
+      headers: accessToken,
+    })
+    // return <Redirect to='/' />
+    // history.push('/')
   }
   
   useEffect(() => {
+    // console.log('wow!')
     if(accessToken) setIsLogin(true)
     else setIsLogin(false);
   },[accessToken])
+
   return (
     <Router>
     <Switch>
-      <Route 
-        exact path="/"
+      <Route
+        exact 
+        path="/"
         render={() => {
           return (
             isLogin ? <Redirect to='/home' />
@@ -51,10 +68,10 @@ function App() {
         render={() => <Signup />}/>
       <Route 
         path="/mypage"
-        render={() => <Mypage userInfo={userInfo} accessToken={accessToken} />}/>
-      <Route 
+        render={() => <Mypage userInfo={userInfo} accessToken={accessToken} handleLogout={handleLogout}/>}/>
+      <Route
         path="/home"
-        render={() => <Home userInfo={userInfo} accessToken={accessToken}/>}/>
+        render={() => <Home userInfo={userInfo} accessToken={accessToken} handleLogout={handleLogout}/>}/>
 
       <Route 
         path="/writing"
