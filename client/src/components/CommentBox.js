@@ -5,7 +5,6 @@ import './CommentBox.css'
 const CommentBox = ({commentData, accessToken}) =>{
     const {id, content, createdAt, username , generation, img} = commentData
     
-
         /* 좋아요버튼 관련 */
         const [like, setlike ] = useState(false)
         const likeAndUnlike = async() =>{
@@ -25,7 +24,7 @@ const CommentBox = ({commentData, accessToken}) =>{
         <div className="commentBox__body">
 
           <div className="commentBox__profile">
-            <img src={img}/>
+            <img src={img} alt=""/>
           </div>
           <div className="commentBox__contents">
             <div className="commentBox__contents__user-info">

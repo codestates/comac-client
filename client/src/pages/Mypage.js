@@ -1,13 +1,8 @@
 import React from 'react'
 import './Mypage.css'
 import Nav from '../components/Nav'
-import { Link, useHistory} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 15a7409fe3a12c5d984688cdfd7251789627bcdb
 const Mypage = ({userInfo, accessToken, handleLogout}) => {
   const history = useHistory();
 
@@ -25,7 +20,7 @@ const Mypage = ({userInfo, accessToken, handleLogout}) => {
 
           <div className="user-info__profile">
             {/* <i className="fas fa-user"></i> */}
-            <img src={img} />
+            <img src={img} alt=""/>
           </div>
 
           <div className="user-info__links">
@@ -41,13 +36,7 @@ const Mypage = ({userInfo, accessToken, handleLogout}) => {
           </div>
 
           <div className="user-info__button">
-<<<<<<< HEAD
             <button onClick={() => history.push('/home')}>확인</button>
-=======
-
-            <button onClick={() => history.push('/home')}>확인</button>
-            
->>>>>>> 15a7409fe3a12c5d984688cdfd7251789627bcdb
           </div>
 
         </div>

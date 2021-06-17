@@ -11,18 +11,11 @@ const Nav = ({ name, handleLogout }) => {
           </div>
 
           <div className="nav-bar__page-name">{name}</div>
-<<<<<<< HEAD
           <div>
             <div className="nav-bar__post-btn logout" onClick={ () => handleLogout() } >LOGOUT</div>
             <div className="nav-bar__post-btn"><Link id="writing-link" to="/writing">WRITE</Link></div>
           </div>
         
-=======
-
-
-          <div className="nav-bar__post-btn" onClick={ () => handleLogout() } >LOGOUT</div>
-          <div className="nav-bar__post-btn"><Link id="writing-link" to="/writing">WRITE</Link></div>
->>>>>>> 15a7409fe3a12c5d984688cdfd7251789627bcdb
 
         </nav>
     )

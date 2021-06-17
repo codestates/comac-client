@@ -26,8 +26,9 @@ const Post = ({postData, accessToken}) => {
       if(data) return SetCommentList(data)
     })
     .catch((err) => { return })
-  },[])
-
+  },[id])
+  
+  
 
   const [Like, setLike ] = useState(false)
 
@@ -50,9 +51,9 @@ const Post = ({postData, accessToken}) => {
         <div className="post__body">
 
           {isOpen ? (<div className="hi"><PostingAndCommentList postId={id}/*댓글목록 불러올 게시물아이디*/ CommentList={CommentList} CloseModal={CloseModal} OpenModal={OpenModal} accessToken={accessToken} /></div>) : null}
-
+    
           <div className  ="post__user-info">
-            <div><img src={img} className="fas fa-user"/></div>
+            <div><img src={img} alt="" className="fas fa-user"/></div>
             <div>{username}</div>
             <div>{generation}</div>
             <div>{createdAt.slice(0,10)}</div>
