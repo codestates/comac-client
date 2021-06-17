@@ -32,17 +32,13 @@ function App() {
   }
 
   const handleLogout = () => {
-    // localStorage.removeItem('accessToken')
-    // localStorage.removeItem('userInfo')
-    setAccessToken(null)
-    localStorage.clear()
-    // console.log(isLogin)
-    // console.log(accessToken)
-    server.post('/logout', {
+    server.post('/logout',null , {
       headers: accessToken,
     })
-    // return <Redirect to='/' />
-    // history.push('/')
+    .then(() => {
+      localStorage.clear()
+    })
+    window.location.replace('/')
   }
   
   useEffect(() => {
@@ -70,7 +66,7 @@ function App() {
         render={() => <Signup />}/>
       <Route 
         path="/mypage"
-        render={() => <Mypage userInfo={userInfo} accessToken={accessToken} handleLogout={handleLogout}/>}/>
+        render={() => <Mypage userInfo={userInfo} accessToken={accessToken} handleLogout={handleLogout} />}/>
       <Route
         path="/home"
         render={() => <Home userInfo={userInfo} accessToken={accessToken} handleLogout={handleLogout}/>}/>
