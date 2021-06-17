@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom' 
+import { Link, useHistory } from 'react-router-dom' 
 import server from '../apis/server'
 
 const Signup = () => {
@@ -11,7 +11,7 @@ const Signup = () => {
     generation: ''
   })
   const [ errMsg, setErrMsg ] = useState('')
-
+  let history = useHistory()
   const handleInputValue = (key) => (e) => {
     setUserInfo({
       ...userInfo,
@@ -39,7 +39,10 @@ const Signup = () => {
         generation
       })
       .then((res) => {
-        return setErrMsg('회원가입에 성공하였습니다.')
+        setErrMsg('회원가입에 성공하였습니다.')
+      })
+      .then(() => {
+        history.push('/')
       })
       .catch(err => {
         setErrMsg('회원가입이 실패하였습니다.');

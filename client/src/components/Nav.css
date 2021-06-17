@@ -47,7 +47,6 @@
     padding: 8px 12px;
 }
 
-
 .nav-bar__post-btn{
     display: flex;
     justify-content: center;
@@ -57,7 +56,6 @@
     padding: 8px 12px;
     border-radius: 5px;
     color: #eedfe2;
-    
 }
 
 .nav-bar__post-btn:hover {
@@ -127,8 +125,9 @@
     }
 
     .nav-bar > div:nth-child(3){
-        flex-direction: column;
-        align-self: center;
+        /* flex-direction: column;
+        align-self: center; */
+        padding-left: 25px;
     }
 
 

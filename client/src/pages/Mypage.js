@@ -19,8 +19,9 @@ const Mypage = ({userInfo, accessToken, handleLogout}) => {
         <div className="user-info">
 
           <div className="user-info__profile">
-            {/* <i className="fas fa-user"></i> */}
-            <img src={img} alt=""/>
+            {img.slice(0,11) === "https://lh3" ? <img className="user-info__social-img" src={img} />
+            : <img id="user-info__img" src={img}/>}     
+
           </div>
 
           <div className="user-info__links">
@@ -30,9 +31,9 @@ const Mypage = ({userInfo, accessToken, handleLogout}) => {
           </div>
 
           <div className="user-info__info-box">
-            <div>{username}</div>
-            <div>{name}</div>
-            <div>{generation}</div>
+            <div>name: {username}</div>
+            <div>nickname: {name}</div>
+            <div>generation: {generation}</div>
           </div>
 
           <div className="user-info__button">
